@@ -12,6 +12,7 @@ ipython
 markupsafe==2.0.1
 matplotlib
 mysql-connector-python
+neurokit2
 numpy<2.0.0,>=1.23.5
 paho-mqtt
 pandas
