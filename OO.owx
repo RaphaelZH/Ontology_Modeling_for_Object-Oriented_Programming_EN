@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.semanticweb.org/haozhang/ontologies/2025/11/untitled-ontology-4"
+     xml:base="http://www.semanticweb.org/haozhang/ontologies/OO"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="http://www.semanticweb.org/haozhang/ontologies/2025/11/untitled-ontology-4">
-    <Prefix name="" IRI="http://www.semanticweb.org/haozhang/ontologies/2025/11/untitled-ontology-4/"/>
+     ontologyIRI="http://www.semanticweb.org/haozhang/ontologies/OO">
+    <Prefix name="" IRI="http://www.semanticweb.org/haozhang/ontologies/OO/"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
@@ -31,22 +31,16 @@
         <Class IRI="#Teacher"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_student"/>
+        <ObjectProperty IRI="#has_students"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#has_teacher"/>
+        <ObjectProperty IRI="#has_teaches"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_student_of"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#is_teacher_of"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#students"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#teaches"/>
+        <ObjectProperty IRI="#is_teached_by"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#address"/>
@@ -117,21 +111,6 @@
         <Class IRI="#Class"/>
         <NamedIndividual IRI="#Transfiguration"/>
     </ClassAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_student"/>
-        <NamedIndividual IRI="#Hogwarts"/>
-        <NamedIndividual IRI="#Harry_Potter"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#is_teacher_of"/>
-        <NamedIndividual IRI="#Minerva_McGonagall"/>
-        <NamedIndividual IRI="#Transfiguration"/>
-    </ObjectPropertyAssertion>
-    <ObjectPropertyAssertion>
-        <ObjectProperty IRI="#has_student"/>
-        <NamedIndividual IRI="#Transfiguration"/>
-        <NamedIndividual IRI="#Harry_Potter"/>
-    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#details"/>
         <NamedIndividual IRI="#Dobby"/>
@@ -177,49 +156,41 @@
         <NamedIndividual IRI="#Rubeus_Hagrid"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5000</Literal>
     </DataPropertyAssertion>
-    <EquivalentObjectProperties>
-        <ObjectProperty IRI="#has_student"/>
-        <ObjectProperty IRI="#students"/>
-    </EquivalentObjectProperties>
-    <EquivalentObjectProperties>
-        <ObjectProperty IRI="#is_teacher_of"/>
-        <ObjectProperty IRI="#teaches"/>
-    </EquivalentObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#has_student"/>
+        <ObjectProperty IRI="#has_students"/>
         <ObjectProperty IRI="#is_student_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#has_teacher"/>
-        <ObjectProperty IRI="#is_teacher_of"/>
+        <ObjectProperty IRI="#has_teaches"/>
+        <ObjectProperty IRI="#is_teached_by"/>
     </InverseObjectProperties>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has_student"/>
+        <ObjectProperty IRI="#has_students"/>
         <Class IRI="#Class"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has_student"/>
+        <ObjectProperty IRI="#has_students"/>
         <Class IRI="#School"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#has_teacher"/>
-        <Class IRI="#Class"/>
+        <ObjectProperty IRI="#has_teaches"/>
+        <Class IRI="#Teacher"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_student_of"/>
         <Class IRI="#Student"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="#is_teacher_of"/>
-        <Class IRI="#Teacher"/>
+        <ObjectProperty IRI="#is_teached_by"/>
+        <Class IRI="#Class"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#has_student"/>
+        <ObjectProperty IRI="#has_students"/>
         <Class IRI="#Student"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#has_teacher"/>
-        <Class IRI="#Teacher"/>
+        <ObjectProperty IRI="#has_teaches"/>
+        <Class IRI="#Class"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_student_of"/>
@@ -230,8 +201,8 @@
         <Class IRI="#School"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="#is_teacher_of"/>
-        <Class IRI="#Class"/>
+        <ObjectProperty IRI="#is_teached_by"/>
+        <Class IRI="#Teacher"/>
     </ObjectPropertyRange>
     <DataPropertyDomain>
         <DataProperty IRI="#address"/>

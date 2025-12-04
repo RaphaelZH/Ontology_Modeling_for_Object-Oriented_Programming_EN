@@ -5,7 +5,7 @@ gitpython
 ipykernel
 ipython
 matplotlib
-numpy
+numpy<2.0.0,>=1.23.5
 owlready2
 pandas
 pip
