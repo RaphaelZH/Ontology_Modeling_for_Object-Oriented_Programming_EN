@@ -63,6 +63,24 @@
     <Declaration>
         <DataProperty IRI="#salary"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Dobby"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Hogwarts"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Rubeus_Hagrid"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Transfiguration"/>
+    </Declaration>
     <SubClassOf>
         <Class IRI="#Employee"/>
         <Class IRI="#Person"/>
@@ -75,6 +93,90 @@
         <Class IRI="#Teacher"/>
         <Class IRI="#Employee"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Person"/>
+        <NamedIndividual IRI="#Dobby"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Student"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#School"/>
+        <NamedIndividual IRI="#Hogwarts"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Teacher"/>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Employee"/>
+        <NamedIndividual IRI="#Rubeus_Hagrid"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class"/>
+        <NamedIndividual IRI="#Transfiguration"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_student"/>
+        <NamedIndividual IRI="#Hogwarts"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_teacher_of"/>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+        <NamedIndividual IRI="#Transfiguration"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_student"/>
+        <NamedIndividual IRI="#Transfiguration"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#details"/>
+        <NamedIndividual IRI="#Dobby"/>
+        <Literal>Dobby is one of the supporting characters in Harry Potter. He was a male house-elf who served the Malfoy family. His masters were Dark Wizards who treated him cruelly - Until he was saved by Harry Potter. He served the young wizard and worked in the kitchens of Hogwarts.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#details"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <Literal>Auror Harry James Potter (b. 31 July 1980) was an English half-blood wizard, and one of the most famous wizards of modern times. The only child and son of James and Lily Potter (née Evans), Harry&apos;s birth was overshadowed by a prophecy, naming either himself or Neville Longbottom as the one with the power to vanquish his arch-enemy, Lord Voldemort, the most powerful and feared Dark wizard in the world. After half of the prophecy was reported to Voldemort, courtesy of Severus Snape, Harry was chosen as the target due to his many similarities with the Dark Lord. This in turn caused the Potter family to go into hiding.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#grade"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">96.7</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#address"/>
+        <NamedIndividual IRI="#Hogwarts"/>
+        <Literal>Scottish Highlands</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#postCodesAccepted"/>
+        <NamedIndividual IRI="#Hogwarts"/>
+        <Literal>Unknown</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#details"/>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+        <Literal>Minerva McGonagall is a major character in the Harry Potter franchise. She is the Transfiguration teacher at Hogwarts School of Witchcraft and Wizardry during the events of Harry Potter series. She is the only daughter of Robert McGonagall senior and. McGonagall acts as a stern but caring grandmotherly figure for her students, especially Harry Potter, Ron Weasley and Hermione Granger. She is also loyal to Albus Dumbledore, who she considers one of her closest friends. After the War, she became the Headmistress of the school.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20000</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#details"/>
+        <NamedIndividual IRI="#Rubeus_Hagrid"/>
+        <Literal>Rubeus Hagrid is one of the major characters of Harry Potter by JK Rowling. During his sixth year at Hogwarts, Hagrid was expelled from school. However, as an adult, he stayed on as the gameskeeper. Throughout the book series, he supports Harry and becomes one of his many father figures and was one of his first friends and the one to tell Harry of his wizardry heritage.</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#salary"/>
+        <NamedIndividual IRI="#Rubeus_Hagrid"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">5000</Literal>
+    </DataPropertyAssertion>
     <EquivalentObjectProperties>
         <ObjectProperty IRI="#has_student"/>
         <ObjectProperty IRI="#students"/>
