@@ -7,6 +7,7 @@ file_content_1, file_content_2, file_content_3 = "", "", ""
 
 for cls in onto.classes():
     prop_list = []
+    
     for prop in onto.properties():
         if cls in prop.domain:
             if re.match("is_*", prop.name):
@@ -15,6 +16,7 @@ for cls in onto.classes():
                 prop_list.append(prop.name[4:])
             else:
                 prop_list.append(prop.name)
+    
     for supercls in cls.is_a:
         if supercls != Thing:
             class_content_2 = f"class {cls.name}({supercls.name}):\n"
