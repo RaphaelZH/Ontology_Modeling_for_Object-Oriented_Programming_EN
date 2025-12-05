@@ -111,6 +111,21 @@
         <Class IRI="#Class"/>
         <NamedIndividual IRI="#Transfiguration"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_students"/>
+        <NamedIndividual IRI="#Hogwarts"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_teaches"/>
+        <NamedIndividual IRI="#Minerva_McGonagall"/>
+        <NamedIndividual IRI="#Transfiguration"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_students"/>
+        <NamedIndividual IRI="#Transfiguration"/>
+        <NamedIndividual IRI="#Harry_Potter"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#details"/>
         <NamedIndividual IRI="#Dobby"/>
