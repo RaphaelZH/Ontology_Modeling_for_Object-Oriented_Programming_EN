@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<OO:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:OO="OO" xmi:id="_GZKvQNOFEfCrVtssqdt7Hw" name="Registration">
+  <contents xsi:type="OO:Class" xmi:id="_MZM_ENOFEfCrVtssqdt7Hw" name="School">
+    <features xsi:type="OO:Attribute" xmi:id="_p86QYNOMEfCrVtssqdt7Hw" name="id"/>
+    <features xsi:type="OO:Attribute" xmi:id="_2AnS0NOMEfCrVtssqdt7Hw" name="name"/>
+  </contents>
+  <contents xsi:type="OO:Class" xmi:id="_NdTgYNOFEfCrVtssqdt7Hw" name="Student">
+    <features xsi:type="OO:Attribute" xmi:id="_6DMXcNOMEfCrVtssqdt7Hw" name="id"/>
+    <features xsi:type="OO:Attribute" xmi:id="_6DMXcdOMEfCrVtssqdt7Hw" name="name"/>
+  </contents>
+  <contents xsi:type="OO:Class" xmi:id="_OWcH0NOFEfCrVtssqdt7Hw" name="Class">
+    <features xsi:type="OO:Attribute" xmi:id="_6gNDkNOMEfCrVtssqdt7Hw" name="id"/>
+    <features xsi:type="OO:Attribute" xmi:id="_6gNDkdOMEfCrVtssqdt7Hw" name="name"/>
+  </contents>
+</OO:Package>

@@ -4,6 +4,7 @@ black
 gitpython
 ipykernel
 ipython
+lxml
 matplotlib
 numpy<2.0.0,>=1.23.5
 owlready2
@@ -11,6 +12,7 @@ pandas
 pip
 scikit-learn
 setuptools
+termcolor
 Unidecode
 wheel
 yapf
