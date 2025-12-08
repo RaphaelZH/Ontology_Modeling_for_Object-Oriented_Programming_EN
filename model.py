@@ -1,11 +1,14 @@
 from glob import glob
+from owlready2 import *
 from termcolor import cprint
 import xml.etree.ElementTree as ET
 
 input_dir = "1. Inputs"
 model_dir = "1. Input Models"
-
 model_files = glob(f"{input_dir}/{model_dir}/*.model")
+
+onto = get_ontology("Programming Language Generation Path.owl").load()
+print(onto)
 
 for model_file in model_files:
     model_tree = ET.parse(model_file)

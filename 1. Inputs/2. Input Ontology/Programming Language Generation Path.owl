@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/haozhang/ontologies/Generation_Path"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/haozhang/ontologies/Generation_Path">
+    <Prefix name="" IRI="http://www.semanticweb.org/haozhang/ontologies/Generation_Path/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Attribute_Getting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attribute_Settings"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Body"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Class_Attributes"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Class_Builder"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Class_Initializer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#General_Structure"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Head"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Java"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OOP"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Programming_Language"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Python"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#java"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#python"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_body"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_head"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_programming_language"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_tail"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_body_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_head_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_programming_language_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_tail_of"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#code"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_attribute_getting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_attribute_settings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Java"/>
+        <Class IRI="#java"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#OOP"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Python"/>
+        <Class IRI="#python"/>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Attribute_Getting"/>
+        <Class IRI="#Class_Attributes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attribute_Settings"/>
+        <Class IRI="#Class_Attributes"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Body"/>
+        <Class IRI="#General_Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Class_Attributes"/>
+        <Class IRI="#Class_Builder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Class_Initializer"/>
+        <Class IRI="#Class_Builder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Head"/>
+        <Class IRI="#General_Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Java"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OOP"/>
+        <Class IRI="#Programming_Language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Object-Oriented_Programming"/>
+        <Class IRI="#Programming_Language"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Python"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Tail"/>
+        <Class IRI="#General_Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#java"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#python"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Getting"/>
+        <NamedIndividual IRI="#python_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Settings"/>
+        <NamedIndividual IRI="#python_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Head"/>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tail"/>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_attribute_getting"/>
+        <Literal>\tdef get_{attribute_name}(self):\n\t\treturn self.{attribute_name}\n\n</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_attribute_settings"/>
+        <Literal>\tdef set_{attribute_name}(self, value):\n\t\tself.{attribute_name} = value\n\n</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+        <Literal>\t\tself.{attribute_name} = &quot;&quot;\n\n</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+        <Literal>class {class_name}:\n\tdef __init__(self):\n</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_body"/>
+        <ObjectProperty IRI="#is_body_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_head"/>
+        <ObjectProperty IRI="#is_head_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_programming_language"/>
+        <ObjectProperty IRI="#is_programming_language_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_tail"/>
+        <ObjectProperty IRI="#is_tail_of"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_body"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_head"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_programming_language"/>
+        <Class IRI="#Class_Builder"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_tail"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_body_of"/>
+        <Class IRI="#Body"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_head_of"/>
+        <Class IRI="#Head"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_programming_language_of"/>
+        <Class IRI="#Programming_Language"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_tail_of"/>
+        <Class IRI="#Tail"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_body"/>
+        <Class IRI="#Body"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_head"/>
+        <Class IRI="#Head"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_programming_language"/>
+        <Class IRI="#Programming_Language"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_tail"/>
+        <Class IRI="#Tail"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_body_of"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_head_of"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_programming_language_of"/>
+        <Class IRI="#Class_Builder"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_tail_of"/>
+        <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
