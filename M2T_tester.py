@@ -13,9 +13,11 @@ onto = get_ontology(
 ).load()
 
 output_dir = "2. Outputs"
-language = "python"
+language = "C++".replace("+", "p")
 language_list = ["Python", "Java", "Cpp"]
-language_dir = f"{language_list.index(language.capitalize()) + 1}. {language.capitalize()} Files"
+language_dir = (
+    f"{language_list.index(language.capitalize()) + 1}. {language.capitalize()} Files"
+)
 
 for individual in onto.individuals():
     for cls in onto.classes():
@@ -33,7 +35,7 @@ for individual in onto.individuals():
             elif individual.name == f"{language.lower()}_class_initializer_tail":
                 class_initializer_tail = individual.code
 
-package_code = file_header[0].format(n="\n", t="\t").expandtabs(4)
+package_code = file_header[0].format(n="\n", t="\t", b="{", e="}").expandtabs(4)
 for model_file in model_files:
     model_tree = ET.parse(model_file)
     model_root = model_tree.getroot()
@@ -42,35 +44,56 @@ for model_file in model_files:
     for content in model_root.iter("contents"):
         class_name = content.attrib.get("name")
         class_code = f"{class_initializer_head[0]}".format(
-            class_name=class_name, n="\n", t="\t"
+            class_name=class_name, n="\n", t="\t", b="{", e="}"
         ).expandtabs(4)
 
         for feature in content.iter("features"):
             attribute_name = feature.attrib.get("name")
             class_code += f"{class_initializer_body[0]}".format(
-                class_name=class_name, attribute_name=attribute_name, n="\n", t="\t"
+                class_name=class_name,
+                attribute_name=attribute_name,
+                n="\n",
+                t="\t",
+                b="{",
+                e="}",
             ).expandtabs(4)
         class_code += "\n"
 
         for feature in content.iter("features"):
             attribute_name = feature.attrib.get("name")
             class_code += f"{attribute_getting[0]}".format(
-                class_name=class_name, attribute_name=attribute_name, n="\n", t="\t"
+                class_name=class_name,
+                attribute_name=attribute_name,
+                n="\n",
+                t="\t",
+                b="{",
+                e="}",
             ).expandtabs(4)
 
         for feature in content.iter("features"):
             attribute_name = feature.attrib.get("name")
             class_code += f"{attribute_settings[0]}".format(
-                class_name=class_name, attribute_name=attribute_name, n="\n", t="\t"
+                class_name=class_name,
+                attribute_name=attribute_name,
+                n="\n",
+                t="\t",
+                b="{",
+                e="}",
             ).expandtabs(4)
 
         class_code += f"{class_initializer_tail[0]}".format(
-            class_name=class_name, n="\n", t="\t"
+            class_name=class_name, n="\n", t="\t", b="{", e="}"
         ).expandtabs(4)
 
         package_code += class_code
 
     if language.capitalize() == "Python":
         file_format = "py"
-    with open(f"{output_dir}/{language_dir}/{package_name.lower()}.{file_format}", "w") as file:
+    elif language.capitalize() == "Java":
+        file_format = "java"
+    elif language.capitalize() == "Cpp":
+        file_format = "cpp"
+    with open(
+        f"{output_dir}/{language_dir}/{package_name.lower()}.{file_format}", "w"
+    ) as file:
         file.write(package_code)

@@ -31,6 +31,9 @@
         <Class IRI="#Class_Initializer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Cpp"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#File_Header"/>
     </Declaration>
     <Declaration>
@@ -56,6 +59,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Tail"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#cpp"/>
     </Declaration>
     <Declaration>
         <Class IRI="#java"/>
@@ -91,6 +97,42 @@
         <DataProperty IRI="#code"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#cpp_attribute_getting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cpp_attribute_settings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cpp_file_header"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_attribute_getting"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_attribute_settings"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#java_file_header"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#python_attribute_getting"/>
     </Declaration>
     <Declaration>
@@ -108,6 +150,10 @@
     <Declaration>
         <NamedIndividual IRI="#python_file_header"/>
     </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Cpp"/>
+        <Class IRI="#cpp"/>
+    </EquivalentClasses>
     <EquivalentClasses>
         <Class IRI="#Java"/>
         <Class IRI="#java"/>
@@ -145,6 +191,10 @@
         <Class IRI="#Class_Builder"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Cpp"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#File_Header"/>
         <Class IRI="#General_Structure"/>
     </SubClassOf>
@@ -173,6 +223,10 @@
         <Class IRI="#General_Structure"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#cpp"/>
+        <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#java"/>
         <Class IRI="#Object-Oriented_Programming"/>
     </SubClassOf>
@@ -180,6 +234,174 @@
         <Class IRI="#python"/>
         <Class IRI="#Object-Oriented_Programming"/>
     </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Getting"/>
+        <NamedIndividual IRI="#cpp_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Settings"/>
+        <NamedIndividual IRI="#cpp_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Head"/>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tail"/>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Cpp"/>
+        <NamedIndividual IRI="#cpp_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#File_Header"/>
+        <NamedIndividual IRI="#cpp_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#cpp"/>
+        <NamedIndividual IRI="#cpp_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Getting"/>
+        <NamedIndividual IRI="#java_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Attribute_Settings"/>
+        <NamedIndividual IRI="#java_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Body"/>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Head"/>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Class_Initializer"/>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tail"/>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#File_Header"/>
+        <NamedIndividual IRI="#java_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Java"/>
+        <NamedIndividual IRI="#java_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#java"/>
+        <NamedIndividual IRI="#java_file_header"/>
+    </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Attribute_Getting"/>
         <NamedIndividual IRI="#python_attribute_getting"/>
@@ -264,6 +486,66 @@
         <Class IRI="#python"/>
         <NamedIndividual IRI="#python_file_header"/>
     </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_attribute_getting"/>
+        <Literal>public:{n}{t}std::string get_{attribute_name}() const{n}{t}{b}{n}{t}{t}return {attribute_name};{n}{t}{e}{n}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_attribute_settings"/>
+        <Literal>public:{n}{t}void set_{attribute_name}(const std::string &amp;value){n}{t}{b}{n}{t}{t}{attribute_name} = value;{n}{t}{e}{n}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_class_initializer_body"/>
+        <Literal>private:{n}{t}std::string {attribute_name} = &quot;&quot;;{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_class_initializer_head"/>
+        <Literal>class {class_name}{n}{b}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_class_initializer_tail"/>
+        <Literal>{e};</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#cpp_file_header"/>
+        <Literal>#include &lt;string&gt;{n}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_attribute_getting"/>
+        <Literal>{t}public String get_{attribute_name}() {b}{n}{t}{t}return this.{attribute_name};{n}{t}{e}{n}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_attribute_settings"/>
+        <Literal>{t}public void set_{attribute_name}(String value) {b}{n}{t}{t}this.{attribute_name} = value;{n}{t}{e}{n}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_class_initializer_body"/>
+        <Literal>{t}private String {attribute_name} = &quot;&quot;;{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_class_initializer_head"/>
+        <Literal>class {class_name} {b}{n}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_class_initializer_tail"/>
+        <Literal>{e}</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#java_file_header"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_attribute_getting"/>
