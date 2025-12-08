@@ -12,11 +12,17 @@ onto = get_ontology(
     f"{input_dir}/{onto_dir}/Programming Language Generation Path.owl"
 ).load()
 
-language = "Python"
+output_dir = "2. Outputs"
+language = "python"
+language_list = ["Python", "Java", "Cpp"]
+language_dir = f"{language_list.index(language.capitalize()) + 1}. {language.capitalize()} Files"
+
 for individual in onto.individuals():
     for cls in onto.classes():
         if cls.name == language and cls in individual.is_a:
-            if individual.name == f"{language.lower()}_class_initializer_head":
+            if individual.name == f"{language.lower()}_file_header":
+                file_header = individual.code
+            elif individual.name == f"{language.lower()}_class_initializer_head":
                 class_initializer_head = individual.code
             elif individual.name == f"{language.lower()}_class_initializer_body":
                 class_initializer_body = individual.code
@@ -27,6 +33,7 @@ for individual in onto.individuals():
             elif individual.name == f"{language.lower()}_class_initializer_tail":
                 class_initializer_tail = individual.code
 
+package_code = file_header[0].format(n="\n", t="\t").expandtabs(4)
 for model_file in model_files:
     model_tree = ET.parse(model_file)
     model_root = model_tree.getroot()
@@ -61,5 +68,9 @@ for model_file in model_files:
             class_name=class_name, n="\n", t="\t"
         ).expandtabs(4)
 
-    with open(f"{package_name.lower()}.py", "w") as file:
-        file.write(class_code)
+        package_code += class_code
+
+    if language.capitalize() == "Python":
+        file_format = "py"
+    with open(f"{output_dir}/{language_dir}/{package_name.lower()}.{file_format}", "w") as file:
+        file.write(package_code)

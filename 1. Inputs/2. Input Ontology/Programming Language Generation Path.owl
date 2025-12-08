@@ -31,6 +31,9 @@
         <Class IRI="#Class_Initializer"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#File_Header"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#General_Structure"/>
     </Declaration>
     <Declaration>
@@ -102,6 +105,9 @@
     <Declaration>
         <NamedIndividual IRI="#python_class_initializer_tail"/>
     </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#python_file_header"/>
+    </Declaration>
     <EquivalentClasses>
         <Class IRI="#Java"/>
         <Class IRI="#java"/>
@@ -131,8 +137,16 @@
         <Class IRI="#Class_Builder"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Class_Builder"/>
+        <Class IRI="#General_Structure"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Class_Initializer"/>
         <Class IRI="#Class_Builder"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#File_Header"/>
+        <Class IRI="#General_Structure"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Head"/>
@@ -237,6 +251,18 @@
     <ClassAssertion>
         <Class IRI="#python"/>
         <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#File_Header"/>
+        <NamedIndividual IRI="#python_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#python"/>
+        <NamedIndividual IRI="#python_file_header"/>
     </ClassAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
@@ -261,6 +287,11 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_class_initializer_tail"/>
+        <Literal></Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#code"/>
+        <NamedIndividual IRI="#python_file_header"/>
         <Literal></Literal>
     </DataPropertyAssertion>
     <InverseObjectProperties>
@@ -289,7 +320,7 @@
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_programming_language"/>
-        <Class IRI="#Class_Builder"/>
+        <Class IRI="#General_Structure"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_tail"/>
@@ -337,7 +368,7 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_programming_language_of"/>
-        <Class IRI="#Class_Builder"/>
+        <Class IRI="#General_Structure"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_tail_of"/>
