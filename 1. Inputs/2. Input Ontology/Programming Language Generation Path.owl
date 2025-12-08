@@ -175,11 +175,19 @@
         <NamedIndividual IRI="#python_attribute_getting"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#python"/>
+        <NamedIndividual IRI="#python_attribute_getting"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Attribute_Settings"/>
         <NamedIndividual IRI="#python_attribute_settings"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Python"/>
+        <NamedIndividual IRI="#python_attribute_settings"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#python"/>
         <NamedIndividual IRI="#python_attribute_settings"/>
     </ClassAssertion>
     <ClassAssertion>
@@ -195,6 +203,10 @@
         <NamedIndividual IRI="#python_class_initializer_body"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#python"/>
+        <NamedIndividual IRI="#python_class_initializer_body"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Class_Initializer"/>
         <NamedIndividual IRI="#python_class_initializer_head"/>
     </ClassAssertion>
@@ -207,6 +219,10 @@
         <NamedIndividual IRI="#python_class_initializer_head"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#python"/>
+        <NamedIndividual IRI="#python_class_initializer_head"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Class_Initializer"/>
         <NamedIndividual IRI="#python_class_initializer_tail"/>
     </ClassAssertion>
@@ -216,6 +232,10 @@
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Tail"/>
+        <NamedIndividual IRI="#python_class_initializer_tail"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#python"/>
         <NamedIndividual IRI="#python_class_initializer_tail"/>
     </ClassAssertion>
     <DataPropertyAssertion>
