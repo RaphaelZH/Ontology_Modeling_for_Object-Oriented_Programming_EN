@@ -241,22 +241,22 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_attribute_getting"/>
-        <Literal>\tdef get_{attribute_name}(self):\n\t\treturn self.{attribute_name}\n\n</Literal>
+        <Literal>{t}def get_{attribute_name}(self):{n}{t}{t}return self.{attribute_name}{n}{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_attribute_settings"/>
-        <Literal>\tdef set_{attribute_name}(self, value):\n\t\tself.{attribute_name} = value\n\n</Literal>
+        <Literal>{t}def set_{attribute_name}(self, value):{n}{t}{t}self.{attribute_name} = value{n}{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_class_initializer_body"/>
-        <Literal>\t\tself.{attribute_name} = &quot;&quot;\n\n</Literal>
+        <Literal>{t}{t}self.{attribute_name} = &quot;&quot;{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#python_class_initializer_head"/>
-        <Literal>class {class_name}:\n\tdef __init__(self):\n</Literal>
+        <Literal>class {class_name}:{n}{t}def __init__(self):{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
