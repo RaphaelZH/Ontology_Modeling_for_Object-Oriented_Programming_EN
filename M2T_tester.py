@@ -13,7 +13,7 @@ onto = get_ontology(
 ).load()
 
 output_dir = "2. Outputs"
-language = "C++".replace("+", "p")
+language = "Python".replace("+", "p")
 language_list = ["Python", "Java", "Cpp"]
 language_dir = (
     f"{language_list.index(language.capitalize()) + 1}. {language.capitalize()} Files"

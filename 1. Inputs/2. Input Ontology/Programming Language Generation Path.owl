@@ -509,7 +509,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#cpp_class_initializer_tail"/>
-        <Literal>{e};</Literal>
+        <Literal>{e};{n}{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
@@ -539,7 +539,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#java_class_initializer_tail"/>
-        <Literal>{e}</Literal>
+        <Literal>{e}{n}{n}</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
