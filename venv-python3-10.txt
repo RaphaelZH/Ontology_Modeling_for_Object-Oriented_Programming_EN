@@ -1,6 +1,7 @@
 autopep8
 beautifultable
 black
+deeponto
 gitpython
 ipykernel
 ipython
