@@ -39,6 +39,7 @@ flatbuffers==25.9.23
 fonttools==4.61.0
 frozenlist==1.8.0
 fsspec==2025.10.0
+future-fstrings==1.2.0
 gast==0.7.0
 gitdb==4.0.12
 GitPython==3.1.45
@@ -85,6 +86,7 @@ nltk==3.9.2
 numpy==1.26.4
 opt_einsum==3.4.0
 optree==0.18.0
+ordered-set==4.1.0
 owlready2==0.49
 packaging==25.0
 pandas==2.3.3
@@ -106,6 +108,7 @@ pyarrow==22.0.0
 pycodestyle==2.14.0
 pydantic==2.12.5
 pydantic_core==2.41.5
+pyecore==0.15.2
 Pygments==2.19.2
 pyparsing==3.2.5
 python-dateutil==2.9.0.post0
@@ -116,6 +119,7 @@ pyzmq==27.1.0
 rdflib==7.5.0
 regex==2025.11.3
 requests==2.32.5
+RestrictedPython==8.1
 rich==14.2.0
 safetensors==0.7.0
 scikit-learn==1.7.2
