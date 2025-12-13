@@ -19,7 +19,13 @@
         <Class IRI="#Attribute_Settings"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BB"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Body"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CC"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Class_Attributes"/>
@@ -34,7 +40,19 @@
         <Class IRI="#Cpp"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#DD"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EE"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FF"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#File_Header"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GG"/>
     </Declaration>
     <Declaration>
         <Class IRI="#General_Structure"/>
@@ -73,6 +91,12 @@
         <ObjectProperty IRI="#has_body"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#has_child"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#has_descendant"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#has_head"/>
     </Declaration>
     <Declaration>
@@ -83,6 +107,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_body_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_child_of"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#is_descendant_of"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#is_head_of"/>
@@ -97,6 +127,15 @@
         <DataProperty IRI="#code"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#a"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#b"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#c"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#cpp_attribute_getting"/>
     </Declaration>
     <Declaration>
@@ -113,6 +152,15 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#cpp_file_header"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#d"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#e"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#f"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#java_attribute_getting"/>
@@ -175,8 +223,16 @@
         <Class IRI="#Class_Attributes"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#BB"/>
+        <Class IRI="#GG"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Body"/>
         <Class IRI="#General_Structure"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CC"/>
+        <Class IRI="#BB"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Class_Attributes"/>
@@ -193,6 +249,18 @@
     <SubClassOf>
         <Class IRI="#Cpp"/>
         <Class IRI="#Object-Oriented_Programming"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DD"/>
+        <Class IRI="#GG"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EE"/>
+        <Class IRI="#DD"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FF"/>
+        <Class IRI="#CC"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#File_Header"/>
@@ -235,6 +303,18 @@
         <Class IRI="#Object-Oriented_Programming"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#GG"/>
+        <NamedIndividual IRI="#a"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#BB"/>
+        <NamedIndividual IRI="#b"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#CC"/>
+        <NamedIndividual IRI="#c"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Attribute_Getting"/>
         <NamedIndividual IRI="#cpp_attribute_getting"/>
     </ClassAssertion>
@@ -317,6 +397,18 @@
     <ClassAssertion>
         <Class IRI="#cpp"/>
         <NamedIndividual IRI="#cpp_file_header"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#DD"/>
+        <NamedIndividual IRI="#d"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#EE"/>
+        <NamedIndividual IRI="#e"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#FF"/>
+        <NamedIndividual IRI="#f"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Attribute_Getting"/>
@@ -486,6 +578,136 @@
         <Class IRI="#python"/>
         <NamedIndividual IRI="#python_file_header"/>
     </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_child"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#a"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_child"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_child_of"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#b"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#f"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_child_of"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#c"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_child"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#has_descendant"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#e"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_child_of"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#d"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_child_of"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#e"/>
+        <NamedIndividual IRI="#d"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_child_of"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#a"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#b"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <NamedIndividual IRI="#f"/>
+        <NamedIndividual IRI="#c"/>
+    </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#code"/>
         <NamedIndividual IRI="#cpp_attribute_getting"/>
@@ -581,6 +803,14 @@
         <ObjectProperty IRI="#is_body_of"/>
     </InverseObjectProperties>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#has_child"/>
+        <ObjectProperty IRI="#is_child_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#has_descendant"/>
+        <ObjectProperty IRI="#is_descendant_of"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#has_head"/>
         <ObjectProperty IRI="#is_head_of"/>
     </InverseObjectProperties>
@@ -592,9 +822,39 @@
         <ObjectProperty IRI="#has_tail"/>
         <ObjectProperty IRI="#is_tail_of"/>
     </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#has_child"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="#is_child_of"/>
+    </TransitiveObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_body"/>
         <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#GG"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#GG"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#has_head"/>
@@ -613,6 +873,42 @@
         <Class IRI="#Body"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#CC"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#EE"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#FF"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#CC"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#EE"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#is_head_of"/>
         <Class IRI="#Head"/>
     </ObjectPropertyDomain>
@@ -629,6 +925,42 @@
         <Class IRI="#Body"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#CC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#EE"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_child"/>
+        <Class IRI="#FF"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#CC"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#has_descendant"/>
+        <Class IRI="#EE"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#has_head"/>
         <Class IRI="#Head"/>
     </ObjectPropertyRange>
@@ -643,6 +975,34 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_body_of"/>
         <Class IRI="#Class_Initializer"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#EE"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_child_of"/>
+        <Class IRI="#GG"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#BB"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#DD"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#is_descendant_of"/>
+        <Class IRI="#GG"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#is_head_of"/>

@@ -1,7 +1,6 @@
 autopep8
 beautifultable
 black
-deeponto
 gitpython
 ipykernel
 ipython
@@ -12,6 +11,7 @@ owlready2
 pandas
 pip
 pyecore
+pyswip
 rdflib
 scikit-learn
 setuptools
