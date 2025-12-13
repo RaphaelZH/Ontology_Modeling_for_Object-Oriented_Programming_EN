@@ -1,3 +1,4 @@
+antlr4-python3-runtime
 autopep8
 beautifultable
 black
@@ -16,6 +17,7 @@ rdflib
 scikit-learn
 setuptools
 termcolor
+typing
 Unidecode
 wheel
 yapf
