@@ -1,5 +1,6 @@
 absl-py==2.3.1
 antlr4-python3-runtime==4.13.2
+antlr4-tools==0.2.2
 appnope==0.1.4
 asttokens==3.0.1
 astunparse==1.6.3
@@ -27,6 +28,7 @@ google-pasta==0.2.0
 grpcio==1.76.0
 h5py==3.15.1
 idna==3.11
+install-jdk==1.1.0
 ipykernel==7.1.0
 ipython==9.8.0
 ipython_pygments_lexers==1.1.1
