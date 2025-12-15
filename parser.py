@@ -1,47 +1,12 @@
 from owlready2 import *
 import types
 
+from dictionary_creator import dictionaries_creator
+
+keywords_dict, operators_dict = dictionaries_creator()
+
 onto = get_ontology("http://www.haozhang.me/Programming_Language_Parser.owl#")
 
-keywords_dict = dict(
-    DEF = "def",
-    RETURN = "return",
-    RAISE = "raise",
-    FROM = "from",
-    IMPORT = "import",
-    NONLOCAL = "nonlocal",
-    AS = "as",
-    GLOBAL = "global",
-    ASSERT = "assert",
-    IF = "if",
-    ELIF = "elif",
-    ELSE = "else",
-    WHILE = "while",
-    FOR = "for",
-    IN = "in",
-    TRY = "try",
-    NONE = "None",
-    FINALLY = "finally",
-    WITH = "with",
-    EXCEPT = "except",
-    LAMBDA = "lambda",
-    OR = "or",
-    AND = "and",
-    NOT = "not",
-    IS = "is",
-    CLASS = "class",
-    YIELD = "yield",
-    DEL = "del",
-    PASS = "pass",
-    CONTINUE = "continue",
-    BREAK = "break",
-    ASYNC = "async",
-    AWAIT = "await",
-    PRINT = "print",
-    EXEC = "exec",
-    TRUE = "True",
-    FALSE = "False",
-)
 
 with onto:
 
@@ -58,7 +23,7 @@ with onto:
         pass
 
 
-print(keywords_dict)
+print(keywords_dict, operators_dict)
 
 
 onto.save(file="1. Ontology Files/Programming Language Parser.owl")
