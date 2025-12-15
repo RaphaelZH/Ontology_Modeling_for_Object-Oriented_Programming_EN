@@ -747,12 +747,6 @@
         <ObjectProperty IRI="#has_tail"/>
         <ObjectProperty IRI="#is_tail_of"/>
     </InverseObjectProperties>
-    <FunctionalObjectProperty>
-        <ObjectProperty IRI="#has_child"/>
-    </FunctionalObjectProperty>
-    <TransitiveObjectProperty>
-        <ObjectProperty IRI="#has_child"/>
-    </TransitiveObjectProperty>
     <TransitiveObjectProperty>
         <ObjectProperty IRI="#has_descendant"/>
     </TransitiveObjectProperty>

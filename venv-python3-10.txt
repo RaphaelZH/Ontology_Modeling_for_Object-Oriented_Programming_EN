@@ -18,7 +18,6 @@ rdflib
 scikit-learn
 setuptools
 termcolor
-typing
 Unidecode
 wheel
 yapf
