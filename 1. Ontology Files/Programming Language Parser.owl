@@ -8,8 +8,26 @@
 
 <owl:Ontology rdf:about="http://www.haozhang.me/Programming_Language_Parser.owl"/>
 
-<owl:Class rdf:about="#python_grammar">
+<owl:ObjectProperty rdf:about="#specific_language">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#language_grammar"/>
+  <rdfs:range rdf:resource="#programming_language"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#programming_language">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python">
+  <rdfs:subClassOf rdf:resource="#programming_language"/>
+</owl:Class>
+
+<owl:Class rdf:about="#language_grammar">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_grammar">
+  <rdfs:subClassOf rdf:resource="#language_grammar"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_lexer">
@@ -20,151 +38,151 @@
   <rdfs:subClassOf rdf:resource="#python_lexer"/>
 </owl:Class>
 
-<owl:Class rdf:about="#DEF">
+<owl:Class rdf:about="#python_DEF">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#RETURN">
+<owl:Class rdf:about="#python_RETURN">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#RAISE">
+<owl:Class rdf:about="#python_RAISE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#FROM">
+<owl:Class rdf:about="#python_FROM">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IMPORT">
+<owl:Class rdf:about="#python_IMPORT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NONLOCAL">
+<owl:Class rdf:about="#python_NONLOCAL">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AS">
+<owl:Class rdf:about="#python_AS">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#GLOBAL">
+<owl:Class rdf:about="#python_GLOBAL">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ASSERT">
+<owl:Class rdf:about="#python_ASSERT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IF">
+<owl:Class rdf:about="#python_IF">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ELIF">
+<owl:Class rdf:about="#python_ELIF">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ELSE">
+<owl:Class rdf:about="#python_ELSE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#WHILE">
+<owl:Class rdf:about="#python_WHILE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#FOR">
+<owl:Class rdf:about="#python_FOR">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IN">
+<owl:Class rdf:about="#python_IN">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#TRY">
+<owl:Class rdf:about="#python_TRY">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NONE">
+<owl:Class rdf:about="#python_NONE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#FINALLY">
+<owl:Class rdf:about="#python_FINALLY">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#WITH">
+<owl:Class rdf:about="#python_WITH">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#EXCEPT">
+<owl:Class rdf:about="#python_EXCEPT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#LAMBDA">
+<owl:Class rdf:about="#python_LAMBDA">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#OR">
+<owl:Class rdf:about="#python_OR">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AND">
+<owl:Class rdf:about="#python_AND">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NOT">
+<owl:Class rdf:about="#python_NOT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IS">
+<owl:Class rdf:about="#python_IS">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#CLASS">
+<owl:Class rdf:about="#python_CLASS">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#YIELD">
+<owl:Class rdf:about="#python_YIELD">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#DEL">
+<owl:Class rdf:about="#python_DEL">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#PASS">
+<owl:Class rdf:about="#python_PASS">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#CONTINUE">
+<owl:Class rdf:about="#python_CONTINUE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#BREAK">
+<owl:Class rdf:about="#python_BREAK">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ASYNC">
+<owl:Class rdf:about="#python_ASYNC">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AWAIT">
+<owl:Class rdf:about="#python_AWAIT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#PRINT">
+<owl:Class rdf:about="#python_PRINT">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#EXEC">
+<owl:Class rdf:about="#python_EXEC">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#TRUE">
+<owl:Class rdf:about="#python_TRUE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
-<owl:Class rdf:about="#FALSE">
+<owl:Class rdf:about="#python_FALSE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
@@ -176,488 +194,567 @@
   <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
-<owl:Class rdf:about="#DOT">
+<owl:Class rdf:about="#python_DOT">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ELLIPSIS">
+<owl:Class rdf:about="#python_ELLIPSIS">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#REVERSE_QUOTE">
+<owl:Class rdf:about="#python_REVERSE_QUOTE">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#STAR">
+<owl:Class rdf:about="#python_STAR">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#COMMA">
+<owl:Class rdf:about="#python_COMMA">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#COLON">
+<owl:Class rdf:about="#python_COLON">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#SEMI_COLON">
+<owl:Class rdf:about="#python_SEMI_COLON">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#POWER">
+<owl:Class rdf:about="#python_POWER">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ASSIGN">
+<owl:Class rdf:about="#python_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#OR_OP">
+<owl:Class rdf:about="#python_OR_OP">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#XOR">
+<owl:Class rdf:about="#python_XOR">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AND_OP">
+<owl:Class rdf:about="#python_AND_OP">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#LEFT_SHIFT">
+<owl:Class rdf:about="#python_LEFT_SHIFT">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#RIGHT_SHIFT">
+<owl:Class rdf:about="#python_RIGHT_SHIFT">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ADD">
+<owl:Class rdf:about="#python_ADD">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#MINUS">
+<owl:Class rdf:about="#python_MINUS">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#DIV">
+<owl:Class rdf:about="#python_DIV">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#MOD">
+<owl:Class rdf:about="#python_MOD">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IDIV">
+<owl:Class rdf:about="#python_IDIV">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NOT_OP">
+<owl:Class rdf:about="#python_NOT_OP">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#LESS_THAN">
+<owl:Class rdf:about="#python_LESS_THAN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#GREATER_THAN">
+<owl:Class rdf:about="#python_GREATER_THAN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#EQUALS">
+<owl:Class rdf:about="#python_EQUALS">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#GT_EQ">
+<owl:Class rdf:about="#python_GT_EQ">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#LT_EQ">
+<owl:Class rdf:about="#python_LT_EQ">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NOT_EQ_1">
+<owl:Class rdf:about="#python_NOT_EQ_1">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#NOT_EQ_2">
+<owl:Class rdf:about="#python_NOT_EQ_2">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AT">
+<owl:Class rdf:about="#python_AT">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ARROW">
+<owl:Class rdf:about="#python_ARROW">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#ADD_ASSIGN">
+<owl:Class rdf:about="#python_ADD_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#SUB_ASSIGN">
+<owl:Class rdf:about="#python_SUB_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#MULT_ASSIGN">
+<owl:Class rdf:about="#python_MULT_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AT_ASSIGN">
+<owl:Class rdf:about="#python_AT_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#DIV_ASSIGN">
+<owl:Class rdf:about="#python_DIV_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#MOD_ASSIGN">
+<owl:Class rdf:about="#python_MOD_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#AND_ASSIGN">
+<owl:Class rdf:about="#python_AND_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#OR_ASSIGN">
+<owl:Class rdf:about="#python_OR_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#XOR_ASSIGN">
+<owl:Class rdf:about="#python_XOR_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#LEFT_SHIFT_ASSIGN">
+<owl:Class rdf:about="#python_LEFT_SHIFT_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#RIGHT_SHIFT_ASSIGN">
+<owl:Class rdf:about="#python_RIGHT_SHIFT_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#POWER_ASSIGN">
+<owl:Class rdf:about="#python_POWER_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
-<owl:Class rdf:about="#IDIV_ASSIGN">
+<owl:Class rdf:about="#python_IDIV_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
 </owl:Class>
 
 <owl:NamedIndividual rdf:about="#def">
-  <rdf:type rdf:resource="#DEF"/>
+  <rdf:type rdf:resource="#python_DEF"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#return">
-  <rdf:type rdf:resource="#RETURN"/>
+  <rdf:type rdf:resource="#python_RETURN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#raise">
-  <rdf:type rdf:resource="#RAISE"/>
+  <rdf:type rdf:resource="#python_RAISE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#from">
-  <rdf:type rdf:resource="#FROM"/>
+  <rdf:type rdf:resource="#python_FROM"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#import">
-  <rdf:type rdf:resource="#IMPORT"/>
+  <rdf:type rdf:resource="#python_IMPORT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#nonlocal">
-  <rdf:type rdf:resource="#NONLOCAL"/>
+  <rdf:type rdf:resource="#python_NONLOCAL"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#as">
-  <rdf:type rdf:resource="#AS"/>
+  <rdf:type rdf:resource="#python_AS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#global">
-  <rdf:type rdf:resource="#GLOBAL"/>
+  <rdf:type rdf:resource="#python_GLOBAL"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#assert">
-  <rdf:type rdf:resource="#ASSERT"/>
+  <rdf:type rdf:resource="#python_ASSERT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#if">
-  <rdf:type rdf:resource="#IF"/>
+  <rdf:type rdf:resource="#python_IF"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#elif">
-  <rdf:type rdf:resource="#ELIF"/>
+  <rdf:type rdf:resource="#python_ELIF"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#else">
-  <rdf:type rdf:resource="#ELSE"/>
+  <rdf:type rdf:resource="#python_ELSE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#while">
-  <rdf:type rdf:resource="#WHILE"/>
+  <rdf:type rdf:resource="#python_WHILE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#for">
-  <rdf:type rdf:resource="#FOR"/>
+  <rdf:type rdf:resource="#python_FOR"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#in">
-  <rdf:type rdf:resource="#IN"/>
+  <rdf:type rdf:resource="#python_IN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#try">
-  <rdf:type rdf:resource="#TRY"/>
+  <rdf:type rdf:resource="#python_TRY"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#None">
-  <rdf:type rdf:resource="#NONE"/>
+  <rdf:type rdf:resource="#python_NONE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#finally">
-  <rdf:type rdf:resource="#FINALLY"/>
+  <rdf:type rdf:resource="#python_FINALLY"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#with">
-  <rdf:type rdf:resource="#WITH"/>
+  <rdf:type rdf:resource="#python_WITH"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#except">
-  <rdf:type rdf:resource="#EXCEPT"/>
+  <rdf:type rdf:resource="#python_EXCEPT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lambda">
-  <rdf:type rdf:resource="#LAMBDA"/>
+  <rdf:type rdf:resource="#python_LAMBDA"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#or">
-  <rdf:type rdf:resource="#OR"/>
+  <rdf:type rdf:resource="#python_OR"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#and">
-  <rdf:type rdf:resource="#AND"/>
+  <rdf:type rdf:resource="#python_AND"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#not">
-  <rdf:type rdf:resource="#NOT"/>
+  <rdf:type rdf:resource="#python_NOT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#is">
-  <rdf:type rdf:resource="#IS"/>
+  <rdf:type rdf:resource="#python_IS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#class">
-  <rdf:type rdf:resource="#CLASS"/>
+  <rdf:type rdf:resource="#python_CLASS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#yield">
-  <rdf:type rdf:resource="#YIELD"/>
+  <rdf:type rdf:resource="#python_YIELD"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#del">
-  <rdf:type rdf:resource="#DEL"/>
+  <rdf:type rdf:resource="#python_DEL"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#pass">
-  <rdf:type rdf:resource="#PASS"/>
+  <rdf:type rdf:resource="#python_PASS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#continue">
-  <rdf:type rdf:resource="#CONTINUE"/>
+  <rdf:type rdf:resource="#python_CONTINUE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#break">
-  <rdf:type rdf:resource="#BREAK"/>
+  <rdf:type rdf:resource="#python_BREAK"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#async">
-  <rdf:type rdf:resource="#ASYNC"/>
+  <rdf:type rdf:resource="#python_ASYNC"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#await">
-  <rdf:type rdf:resource="#AWAIT"/>
+  <rdf:type rdf:resource="#python_AWAIT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#print">
-  <rdf:type rdf:resource="#PRINT"/>
+  <rdf:type rdf:resource="#python_PRINT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#exec">
-  <rdf:type rdf:resource="#EXEC"/>
+  <rdf:type rdf:resource="#python_EXEC"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#True">
-  <rdf:type rdf:resource="#TRUE"/>
+  <rdf:type rdf:resource="#python_TRUE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#False">
-  <rdf:type rdf:resource="#FALSE"/>
+  <rdf:type rdf:resource="#python_FALSE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#dot">
-  <rdf:type rdf:resource="#DOT"/>
+  <rdf:type rdf:resource="#python_DOT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#ellipsis">
-  <rdf:type rdf:resource="#ELLIPSIS"/>
+  <rdf:type rdf:resource="#python_ELLIPSIS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#reverse_quote">
-  <rdf:type rdf:resource="#REVERSE_QUOTE"/>
+  <rdf:type rdf:resource="#python_REVERSE_QUOTE"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#star">
-  <rdf:type rdf:resource="#STAR"/>
+  <rdf:type rdf:resource="#python_STAR"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#comma">
-  <rdf:type rdf:resource="#COMMA"/>
+  <rdf:type rdf:resource="#python_COMMA"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#colon">
-  <rdf:type rdf:resource="#COLON"/>
+  <rdf:type rdf:resource="#python_COLON"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#semi_colon">
-  <rdf:type rdf:resource="#SEMI_COLON"/>
+  <rdf:type rdf:resource="#python_SEMI_COLON"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#power">
-  <rdf:type rdf:resource="#POWER"/>
+  <rdf:type rdf:resource="#python_POWER"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#assign">
-  <rdf:type rdf:resource="#ASSIGN"/>
+  <rdf:type rdf:resource="#python_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#or_op">
-  <rdf:type rdf:resource="#OR_OP"/>
+  <rdf:type rdf:resource="#python_OR_OP"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#xor">
-  <rdf:type rdf:resource="#XOR"/>
+  <rdf:type rdf:resource="#python_XOR"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#and_op">
-  <rdf:type rdf:resource="#AND_OP"/>
+  <rdf:type rdf:resource="#python_AND_OP"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#left_shift">
-  <rdf:type rdf:resource="#LEFT_SHIFT"/>
+  <rdf:type rdf:resource="#python_LEFT_SHIFT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#right_shift">
-  <rdf:type rdf:resource="#RIGHT_SHIFT"/>
+  <rdf:type rdf:resource="#python_RIGHT_SHIFT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#add">
-  <rdf:type rdf:resource="#ADD"/>
+  <rdf:type rdf:resource="#python_ADD"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#minus">
-  <rdf:type rdf:resource="#MINUS"/>
+  <rdf:type rdf:resource="#python_MINUS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#div">
-  <rdf:type rdf:resource="#DIV"/>
+  <rdf:type rdf:resource="#python_DIV"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mod">
-  <rdf:type rdf:resource="#MOD"/>
+  <rdf:type rdf:resource="#python_MOD"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#idiv">
-  <rdf:type rdf:resource="#IDIV"/>
+  <rdf:type rdf:resource="#python_IDIV"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#not_op">
-  <rdf:type rdf:resource="#NOT_OP"/>
+  <rdf:type rdf:resource="#python_NOT_OP"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#less_than">
-  <rdf:type rdf:resource="#LESS_THAN"/>
+  <rdf:type rdf:resource="#python_LESS_THAN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#greater_than">
-  <rdf:type rdf:resource="#GREATER_THAN"/>
+  <rdf:type rdf:resource="#python_GREATER_THAN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#equals">
-  <rdf:type rdf:resource="#EQUALS"/>
+  <rdf:type rdf:resource="#python_EQUALS"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#gt_eq">
-  <rdf:type rdf:resource="#GT_EQ"/>
+  <rdf:type rdf:resource="#python_GT_EQ"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#lt_eq">
-  <rdf:type rdf:resource="#LT_EQ"/>
+  <rdf:type rdf:resource="#python_LT_EQ"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#not_eq_1">
-  <rdf:type rdf:resource="#NOT_EQ_1"/>
+  <rdf:type rdf:resource="#python_NOT_EQ_1"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#not_eq_2">
-  <rdf:type rdf:resource="#NOT_EQ_2"/>
+  <rdf:type rdf:resource="#python_NOT_EQ_2"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#at">
-  <rdf:type rdf:resource="#AT"/>
+  <rdf:type rdf:resource="#python_AT"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#arrow">
-  <rdf:type rdf:resource="#ARROW"/>
+  <rdf:type rdf:resource="#python_ARROW"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#add_assign">
-  <rdf:type rdf:resource="#ADD_ASSIGN"/>
+  <rdf:type rdf:resource="#python_ADD_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#sub_assign">
-  <rdf:type rdf:resource="#SUB_ASSIGN"/>
+  <rdf:type rdf:resource="#python_SUB_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mult_assign">
-  <rdf:type rdf:resource="#MULT_ASSIGN"/>
+  <rdf:type rdf:resource="#python_MULT_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#at_assign">
-  <rdf:type rdf:resource="#AT_ASSIGN"/>
+  <rdf:type rdf:resource="#python_AT_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#div_assign">
-  <rdf:type rdf:resource="#DIV_ASSIGN"/>
+  <rdf:type rdf:resource="#python_DIV_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#mod_assign">
-  <rdf:type rdf:resource="#MOD_ASSIGN"/>
+  <rdf:type rdf:resource="#python_MOD_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#and_assign">
-  <rdf:type rdf:resource="#AND_ASSIGN"/>
+  <rdf:type rdf:resource="#python_AND_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#or_assign">
-  <rdf:type rdf:resource="#OR_ASSIGN"/>
+  <rdf:type rdf:resource="#python_OR_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#xor_assign">
-  <rdf:type rdf:resource="#XOR_ASSIGN"/>
+  <rdf:type rdf:resource="#python_XOR_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#left_shift_assign">
-  <rdf:type rdf:resource="#LEFT_SHIFT_ASSIGN"/>
+  <rdf:type rdf:resource="#python_LEFT_SHIFT_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#right_shift_assign">
-  <rdf:type rdf:resource="#RIGHT_SHIFT_ASSIGN"/>
+  <rdf:type rdf:resource="#python_RIGHT_SHIFT_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#power_assign">
-  <rdf:type rdf:resource="#POWER_ASSIGN"/>
+  <rdf:type rdf:resource="#python_POWER_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#idiv_assign">
-  <rdf:type rdf:resource="#IDIV_ASSIGN"/>
+  <rdf:type rdf:resource="#python_IDIV_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
 
