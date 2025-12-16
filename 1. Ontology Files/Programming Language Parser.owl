@@ -16,13 +16,649 @@
   <rdfs:subClassOf rdf:resource="#python_grammar"/>
 </owl:Class>
 
-<owl:Class rdf:about="#keywords">
+<owl:Class rdf:about="#python_keywords">
   <rdfs:subClassOf rdf:resource="#python_lexer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DEF">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RETURN">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RAISE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FROM">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IMPORT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NONLOCAL">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AS">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GLOBAL">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ASSERT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IF">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ELIF">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ELSE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WHILE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FOR">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IN">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TRY">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NONE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FINALLY">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WITH">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EXCEPT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LAMBDA">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OR">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AND">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NOT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IS">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CLASS">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#YIELD">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DEL">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PASS">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CONTINUE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BREAK">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ASYNC">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AWAIT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PRINT">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EXEC">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TRUE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FALSE">
+  <rdfs:subClassOf rdf:resource="#python_keywords"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_parser">
   <rdfs:subClassOf rdf:resource="#python_grammar"/>
 </owl:Class>
+
+<owl:Class rdf:about="#python_operators">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DOT">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ELLIPSIS">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#REVERSE_QUOTE">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#STAR">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#COMMA">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#COLON">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SEMI_COLON">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#POWER">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OR_OP">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#XOR">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AND_OP">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LEFT_SHIFT">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RIGHT_SHIFT">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ADD">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MINUS">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DIV">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MOD">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IDIV">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NOT_OP">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LESS_THAN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GREATER_THAN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EQUALS">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GT_EQ">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LT_EQ">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NOT_EQ_1">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NOT_EQ_2">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AT">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ARROW">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ADD_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SUB_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MULT_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AT_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DIV_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MOD_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AND_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OR_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#XOR_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LEFT_SHIFT_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RIGHT_SHIFT_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#POWER_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IDIV_ASSIGN">
+  <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#def">
+  <rdf:type rdf:resource="#DEF"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#return">
+  <rdf:type rdf:resource="#RETURN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#raise">
+  <rdf:type rdf:resource="#RAISE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#from">
+  <rdf:type rdf:resource="#FROM"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#import">
+  <rdf:type rdf:resource="#IMPORT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#nonlocal">
+  <rdf:type rdf:resource="#NONLOCAL"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#as">
+  <rdf:type rdf:resource="#AS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#global">
+  <rdf:type rdf:resource="#GLOBAL"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#assert">
+  <rdf:type rdf:resource="#ASSERT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#if">
+  <rdf:type rdf:resource="#IF"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#elif">
+  <rdf:type rdf:resource="#ELIF"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#else">
+  <rdf:type rdf:resource="#ELSE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#while">
+  <rdf:type rdf:resource="#WHILE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#for">
+  <rdf:type rdf:resource="#FOR"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#in">
+  <rdf:type rdf:resource="#IN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#try">
+  <rdf:type rdf:resource="#TRY"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#None">
+  <rdf:type rdf:resource="#NONE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#finally">
+  <rdf:type rdf:resource="#FINALLY"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#with">
+  <rdf:type rdf:resource="#WITH"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#except">
+  <rdf:type rdf:resource="#EXCEPT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lambda">
+  <rdf:type rdf:resource="#LAMBDA"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#or">
+  <rdf:type rdf:resource="#OR"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#and">
+  <rdf:type rdf:resource="#AND"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#not">
+  <rdf:type rdf:resource="#NOT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#is">
+  <rdf:type rdf:resource="#IS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#class">
+  <rdf:type rdf:resource="#CLASS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#yield">
+  <rdf:type rdf:resource="#YIELD"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#del">
+  <rdf:type rdf:resource="#DEL"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#pass">
+  <rdf:type rdf:resource="#PASS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#continue">
+  <rdf:type rdf:resource="#CONTINUE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#break">
+  <rdf:type rdf:resource="#BREAK"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#async">
+  <rdf:type rdf:resource="#ASYNC"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#await">
+  <rdf:type rdf:resource="#AWAIT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#print">
+  <rdf:type rdf:resource="#PRINT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#exec">
+  <rdf:type rdf:resource="#EXEC"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#True">
+  <rdf:type rdf:resource="#TRUE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#False">
+  <rdf:type rdf:resource="#FALSE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#dot">
+  <rdf:type rdf:resource="#DOT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#ellipsis">
+  <rdf:type rdf:resource="#ELLIPSIS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#reverse_quote">
+  <rdf:type rdf:resource="#REVERSE_QUOTE"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#star">
+  <rdf:type rdf:resource="#STAR"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#comma">
+  <rdf:type rdf:resource="#COMMA"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#colon">
+  <rdf:type rdf:resource="#COLON"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#semi_colon">
+  <rdf:type rdf:resource="#SEMI_COLON"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#power">
+  <rdf:type rdf:resource="#POWER"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#assign">
+  <rdf:type rdf:resource="#ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#or_op">
+  <rdf:type rdf:resource="#OR_OP"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#xor">
+  <rdf:type rdf:resource="#XOR"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#and_op">
+  <rdf:type rdf:resource="#AND_OP"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#left_shift">
+  <rdf:type rdf:resource="#LEFT_SHIFT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#right_shift">
+  <rdf:type rdf:resource="#RIGHT_SHIFT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#add">
+  <rdf:type rdf:resource="#ADD"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#minus">
+  <rdf:type rdf:resource="#MINUS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#div">
+  <rdf:type rdf:resource="#DIV"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mod">
+  <rdf:type rdf:resource="#MOD"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#idiv">
+  <rdf:type rdf:resource="#IDIV"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#not_op">
+  <rdf:type rdf:resource="#NOT_OP"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#less_than">
+  <rdf:type rdf:resource="#LESS_THAN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#greater_than">
+  <rdf:type rdf:resource="#GREATER_THAN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#equals">
+  <rdf:type rdf:resource="#EQUALS"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#gt_eq">
+  <rdf:type rdf:resource="#GT_EQ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#lt_eq">
+  <rdf:type rdf:resource="#LT_EQ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#not_eq_1">
+  <rdf:type rdf:resource="#NOT_EQ_1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#not_eq_2">
+  <rdf:type rdf:resource="#NOT_EQ_2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#at">
+  <rdf:type rdf:resource="#AT"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#arrow">
+  <rdf:type rdf:resource="#ARROW"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#add_assign">
+  <rdf:type rdf:resource="#ADD_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#sub_assign">
+  <rdf:type rdf:resource="#SUB_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mult_assign">
+  <rdf:type rdf:resource="#MULT_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#at_assign">
+  <rdf:type rdf:resource="#AT_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#div_assign">
+  <rdf:type rdf:resource="#DIV_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#mod_assign">
+  <rdf:type rdf:resource="#MOD_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#and_assign">
+  <rdf:type rdf:resource="#AND_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#or_assign">
+  <rdf:type rdf:resource="#OR_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#xor_assign">
+  <rdf:type rdf:resource="#XOR_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#left_shift_assign">
+  <rdf:type rdf:resource="#LEFT_SHIFT_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#right_shift_assign">
+  <rdf:type rdf:resource="#RIGHT_SHIFT_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#power_assign">
+  <rdf:type rdf:resource="#POWER_ASSIGN"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#idiv_assign">
+  <rdf:type rdf:resource="#IDIV_ASSIGN"/>
+</owl:NamedIndividual>
 
 
 </rdf:RDF>

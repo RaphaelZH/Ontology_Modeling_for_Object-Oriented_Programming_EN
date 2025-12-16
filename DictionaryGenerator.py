@@ -1,4 +1,4 @@
-def dictionaries_creator():
+def python_dictionary_generator():
     keywords_dict = dict(
         DEF="def",
         RETURN="return",
