@@ -14,7 +14,30 @@
   <rdfs:range rdf:resource="#programming_language"/>
 </owl:ObjectProperty>
 
+<owl:ObjectProperty rdf:about="#has_element">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#language_parser"/>
+  <rdfs:range rdf:resource="#variable"/>
+  <rdfs:range rdf:resource="#language_grammar"/>
+</owl:ObjectProperty>
+
 <owl:Class rdf:about="#programming_language">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#language_grammar">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#language_lexer">
+  <rdfs:subClassOf rdf:resource="#language_grammar"/>
+</owl:Class>
+
+<owl:Class rdf:about="#language_parser">
+  <rdfs:subClassOf rdf:resource="#language_grammar"/>
+</owl:Class>
+
+<owl:Class rdf:about="#variable">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
@@ -22,20 +45,68 @@
   <rdfs:subClassOf rdf:resource="#programming_language"/>
 </owl:Class>
 
-<owl:Class rdf:about="#language_grammar">
-  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_grammar">
-  <rdfs:subClassOf rdf:resource="#language_grammar"/>
-</owl:Class>
-
 <owl:Class rdf:about="#python_lexer">
-  <rdfs:subClassOf rdf:resource="#python_grammar"/>
+  <rdfs:subClassOf rdf:resource="#language_lexer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_parser">
+  <rdfs:subClassOf rdf:resource="#language_parser"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_keywords">
   <rdfs:subClassOf rdf:resource="#python_lexer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_operators">
+  <rdfs:subClassOf rdf:resource="#python_lexer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_other_symbols">
+  <rdfs:subClassOf rdf:resource="#python_lexer"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_stmt">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_simple_stmt">
+  <rdfs:subClassOf rdf:resource="#python_stmt"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_compound_stmt">
+  <rdfs:subClassOf rdf:resource="#python_stmt"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_funcdef">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arglist">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments_syntax1">
+  <rdfs:subClassOf rdf:resource="#python_arguments"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments_syntax1_element1">
+  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments_syntax1_element2">
+  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments_syntax1_element3">
+  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_DEF">
@@ -184,14 +255,6 @@
 
 <owl:Class rdf:about="#python_FALSE">
   <rdfs:subClassOf rdf:resource="#python_keywords"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_parser">
-  <rdfs:subClassOf rdf:resource="#python_grammar"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_operators">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_DOT">
@@ -360,6 +423,30 @@
 
 <owl:Class rdf:about="#python_IDIV_ASSIGN">
   <rdfs:subClassOf rdf:resource="#python_operators"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_OPEN_PAREN">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_CLOSE_PAREN">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_OPEN_BRACKET">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_CLOSE_BRACKET">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_OPEN_BRACE">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_CLOSE_BRACE">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
 </owl:Class>
 
 <owl:NamedIndividual rdf:about="#def">
@@ -754,6 +841,36 @@
 
 <owl:NamedIndividual rdf:about="#idiv_assign">
   <rdf:type rdf:resource="#python_IDIV_ASSIGN"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#open_paren">
+  <rdf:type rdf:resource="#python_OPEN_PAREN"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#close_paren">
+  <rdf:type rdf:resource="#python_CLOSE_PAREN"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#open_bracket">
+  <rdf:type rdf:resource="#python_OPEN_BRACKET"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#close_bracket">
+  <rdf:type rdf:resource="#python_CLOSE_BRACKET"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#open_brace">
+  <rdf:type rdf:resource="#python_OPEN_BRACE"/>
+  <specific_language rdf:resource="#python"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#close_brace">
+  <rdf:type rdf:resource="#python_CLOSE_BRACE"/>
   <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 

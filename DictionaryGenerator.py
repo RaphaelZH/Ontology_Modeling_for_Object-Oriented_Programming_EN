@@ -84,4 +84,13 @@ def python_dictionary_generator():
         IDIV_ASSIGN="//=",
     )
 
-    return keywords_dict, operators_dict
+    other_symbols_dict = dict(
+        OPEN_PAREN="(",
+        CLOSE_PAREN=")",
+        OPEN_BRACKET="[",
+        CLOSE_BRACKET="]",
+        OPEN_BRACE="{",
+        CLOSE_BRACE="}",
+    )
+
+    return keywords_dict, operators_dict, other_symbols_dict
