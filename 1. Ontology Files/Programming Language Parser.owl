@@ -8,6 +8,12 @@
 
 <owl:Ontology rdf:about="http://www.haozhang.me/Programming_Language_Parser.owl"/>
 
+<owl:ObjectProperty rdf:about="#syntax_chain">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#language_grammar"/>
+  <rdfs:range rdf:resource="#language_grammar"/>
+</owl:ObjectProperty>
+
 <owl:ObjectProperty rdf:about="#specific_language">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#language_grammar"/>
@@ -17,9 +23,16 @@
 <owl:ObjectProperty rdf:about="#has_element">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#language_parser"/>
-  <rdfs:range rdf:resource="#variable"/>
   <rdfs:range rdf:resource="#language_grammar"/>
+  <rdfs:range rdf:resource="#variable"/>
 </owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#string_value">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#language_grammar"/>
+  <rdfs:domain rdf:resource="#variable"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
 
 <owl:Class rdf:about="#programming_language">
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -41,16 +54,16 @@
   <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
 </owl:Class>
 
+<owl:Class rdf:about="#variable_name">
+  <rdfs:subClassOf rdf:resource="#variable"/>
+</owl:Class>
+
 <owl:Class rdf:about="#python">
   <rdfs:subClassOf rdf:resource="#programming_language"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_lexer">
   <rdfs:subClassOf rdf:resource="#language_lexer"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_parser">
-  <rdfs:subClassOf rdf:resource="#language_parser"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_keywords">
@@ -63,50 +76,6 @@
 
 <owl:Class rdf:about="#python_other_symbols">
   <rdfs:subClassOf rdf:resource="#python_lexer"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_stmt">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_simple_stmt">
-  <rdfs:subClassOf rdf:resource="#python_stmt"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_compound_stmt">
-  <rdfs:subClassOf rdf:resource="#python_stmt"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_classdef">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_funcdef">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arguments">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arglist">
-  <rdfs:subClassOf rdf:resource="#python_parser"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arguments_syntax1">
-  <rdfs:subClassOf rdf:resource="#python_arguments"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arguments_syntax1_element1">
-  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arguments_syntax1_element2">
-  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
-</owl:Class>
-
-<owl:Class rdf:about="#python_arguments_syntax1_element3">
-  <rdfs:subClassOf rdf:resource="#python_arguments_syntax1"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_DEF">
@@ -449,429 +418,622 @@
   <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#def">
+<owl:Class rdf:about="#python_INDENT">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_DEDENT">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_LINE_BREAK">
+  <rdfs:subClassOf rdf:resource="#python_other_symbols"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_parser">
+  <rdfs:subClassOf rdf:resource="#language_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arguments">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_arglist">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_stmt">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_simple_stmt">
+  <rdfs:subClassOf rdf:resource="#python_stmt"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_compound_stmt">
+  <rdfs:subClassOf rdf:resource="#python_stmt"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite_synt1">
+  <rdfs:subClassOf rdf:resource="#python_suite"/>
+  <owl:equivalentClass rdf:resource="#python_simple_stmt"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef_cls1">
+  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef_element2">
+  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+  <owl:equivalentClass rdf:resource="#variable_name"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef_element3">
+  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+  <owl:equivalentClass rdf:resource="#python_arglist"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef_element4">
+  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+  <owl:equivalentClass rdf:resource="#python_COLON"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_classdef_element5">
+  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_funcdef">
+  <rdfs:subClassOf rdf:resource="#python_parser"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#name">
+  <rdf:type rdf:resource="#variable_name"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\{name\}</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_def">
   <rdf:type rdf:resource="#python_DEF"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">def</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#return">
+<owl:NamedIndividual rdf:about="#python_return">
   <rdf:type rdf:resource="#python_RETURN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">return</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#raise">
+<owl:NamedIndividual rdf:about="#python_raise">
   <rdf:type rdf:resource="#python_RAISE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">raise</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#from">
+<owl:NamedIndividual rdf:about="#python_from">
   <rdf:type rdf:resource="#python_FROM"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">from</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#import">
+<owl:NamedIndividual rdf:about="#python_import">
   <rdf:type rdf:resource="#python_IMPORT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">import</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#nonlocal">
+<owl:NamedIndividual rdf:about="#python_nonlocal">
   <rdf:type rdf:resource="#python_NONLOCAL"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">nonlocal</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#as">
+<owl:NamedIndividual rdf:about="#python_as">
   <rdf:type rdf:resource="#python_AS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">as</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#global">
+<owl:NamedIndividual rdf:about="#python_global">
   <rdf:type rdf:resource="#python_GLOBAL"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">global</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#assert">
+<owl:NamedIndividual rdf:about="#python_assert">
   <rdf:type rdf:resource="#python_ASSERT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">assert</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#if">
+<owl:NamedIndividual rdf:about="#python_if">
   <rdf:type rdf:resource="#python_IF"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">if</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#elif">
+<owl:NamedIndividual rdf:about="#python_elif">
   <rdf:type rdf:resource="#python_ELIF"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">elif</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#else">
+<owl:NamedIndividual rdf:about="#python_else">
   <rdf:type rdf:resource="#python_ELSE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">else</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#while">
+<owl:NamedIndividual rdf:about="#python_while">
   <rdf:type rdf:resource="#python_WHILE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">while</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#for">
+<owl:NamedIndividual rdf:about="#python_for">
   <rdf:type rdf:resource="#python_FOR"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">for</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#in">
+<owl:NamedIndividual rdf:about="#python_in">
   <rdf:type rdf:resource="#python_IN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">in</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#try">
+<owl:NamedIndividual rdf:about="#python_try">
   <rdf:type rdf:resource="#python_TRY"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">try</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#None">
+<owl:NamedIndividual rdf:about="#python_none">
   <rdf:type rdf:resource="#python_NONE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">None</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#finally">
+<owl:NamedIndividual rdf:about="#python_finally">
   <rdf:type rdf:resource="#python_FINALLY"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">finally</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#with">
+<owl:NamedIndividual rdf:about="#python_with">
   <rdf:type rdf:resource="#python_WITH"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">with</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#except">
+<owl:NamedIndividual rdf:about="#python_except">
   <rdf:type rdf:resource="#python_EXCEPT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">except</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#lambda">
+<owl:NamedIndividual rdf:about="#python_lambda">
   <rdf:type rdf:resource="#python_LAMBDA"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lambda</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#or">
+<owl:NamedIndividual rdf:about="#python_or">
   <rdf:type rdf:resource="#python_OR"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">or</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#and">
+<owl:NamedIndividual rdf:about="#python_and">
   <rdf:type rdf:resource="#python_AND"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">and</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#not">
+<owl:NamedIndividual rdf:about="#python_not">
   <rdf:type rdf:resource="#python_NOT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">not</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#is">
+<owl:NamedIndividual rdf:about="#python_is">
   <rdf:type rdf:resource="#python_IS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">is</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#class">
+<owl:NamedIndividual rdf:about="#python_class">
   <rdf:type rdf:resource="#python_CLASS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#yield">
+<owl:NamedIndividual rdf:about="#python_yield">
   <rdf:type rdf:resource="#python_YIELD"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">yield</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#del">
+<owl:NamedIndividual rdf:about="#python_del">
   <rdf:type rdf:resource="#python_DEL"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">del</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#pass">
+<owl:NamedIndividual rdf:about="#python_pass">
   <rdf:type rdf:resource="#python_PASS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pass</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#continue">
+<owl:NamedIndividual rdf:about="#python_continue">
   <rdf:type rdf:resource="#python_CONTINUE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">continue</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#break">
+<owl:NamedIndividual rdf:about="#python_break">
   <rdf:type rdf:resource="#python_BREAK"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">break</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#async">
+<owl:NamedIndividual rdf:about="#python_async">
   <rdf:type rdf:resource="#python_ASYNC"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">async</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#await">
+<owl:NamedIndividual rdf:about="#python_await">
   <rdf:type rdf:resource="#python_AWAIT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">await</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#print">
+<owl:NamedIndividual rdf:about="#python_print">
   <rdf:type rdf:resource="#python_PRINT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">print</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#exec">
+<owl:NamedIndividual rdf:about="#python_exec">
   <rdf:type rdf:resource="#python_EXEC"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">exec</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#True">
+<owl:NamedIndividual rdf:about="#python_true">
   <rdf:type rdf:resource="#python_TRUE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">True</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#False">
+<owl:NamedIndividual rdf:about="#python_false">
   <rdf:type rdf:resource="#python_FALSE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">False</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#dot">
+<owl:NamedIndividual rdf:about="#python_dot">
   <rdf:type rdf:resource="#python_DOT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">.</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#ellipsis">
+<owl:NamedIndividual rdf:about="#python_ellipsis">
   <rdf:type rdf:resource="#python_ELLIPSIS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">...</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#reverse_quote">
+<owl:NamedIndividual rdf:about="#python_reverse_quote">
   <rdf:type rdf:resource="#python_REVERSE_QUOTE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">`</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#star">
+<owl:NamedIndividual rdf:about="#python_star">
   <rdf:type rdf:resource="#python_STAR"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#comma">
+<owl:NamedIndividual rdf:about="#python_comma">
   <rdf:type rdf:resource="#python_COMMA"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">,</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#colon">
+<owl:NamedIndividual rdf:about="#python_colon">
   <rdf:type rdf:resource="#python_COLON"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#semi_colon">
+<owl:NamedIndividual rdf:about="#python_semi_colon">
   <rdf:type rdf:resource="#python_SEMI_COLON"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">,</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#power">
+<owl:NamedIndividual rdf:about="#python_power">
   <rdf:type rdf:resource="#python_POWER"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">**</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#assign">
+<owl:NamedIndividual rdf:about="#python_assign">
   <rdf:type rdf:resource="#python_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#or_op">
+<owl:NamedIndividual rdf:about="#python_or_op">
   <rdf:type rdf:resource="#python_OR_OP"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">|</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#xor">
+<owl:NamedIndividual rdf:about="#python_xor">
   <rdf:type rdf:resource="#python_XOR"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">^</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#and_op">
+<owl:NamedIndividual rdf:about="#python_and_op">
   <rdf:type rdf:resource="#python_AND_OP"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&amp;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#left_shift">
+<owl:NamedIndividual rdf:about="#python_left_shift">
   <rdf:type rdf:resource="#python_LEFT_SHIFT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;&lt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#right_shift">
+<owl:NamedIndividual rdf:about="#python_right_shift">
   <rdf:type rdf:resource="#python_RIGHT_SHIFT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;&gt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#add">
+<owl:NamedIndividual rdf:about="#python_add">
   <rdf:type rdf:resource="#python_ADD"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#minus">
+<owl:NamedIndividual rdf:about="#python_minus">
   <rdf:type rdf:resource="#python_MINUS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#div">
+<owl:NamedIndividual rdf:about="#python_div">
   <rdf:type rdf:resource="#python_DIV"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#mod">
+<owl:NamedIndividual rdf:about="#python_mod">
   <rdf:type rdf:resource="#python_MOD"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">%</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#idiv">
+<owl:NamedIndividual rdf:about="#python_idiv">
   <rdf:type rdf:resource="#python_IDIV"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">//</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#not_op">
+<owl:NamedIndividual rdf:about="#python_not_op">
   <rdf:type rdf:resource="#python_NOT_OP"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">~</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#less_than">
+<owl:NamedIndividual rdf:about="#python_less_than">
   <rdf:type rdf:resource="#python_LESS_THAN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#greater_than">
+<owl:NamedIndividual rdf:about="#python_greater_than">
   <rdf:type rdf:resource="#python_GREATER_THAN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#equals">
+<owl:NamedIndividual rdf:about="#python_equals">
   <rdf:type rdf:resource="#python_EQUALS"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">==</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#gt_eq">
+<owl:NamedIndividual rdf:about="#python_gt_eq">
   <rdf:type rdf:resource="#python_GT_EQ"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#lt_eq">
+<owl:NamedIndividual rdf:about="#python_lt_eq">
   <rdf:type rdf:resource="#python_LT_EQ"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#not_eq_1">
+<owl:NamedIndividual rdf:about="#python_not_eq_1">
   <rdf:type rdf:resource="#python_NOT_EQ_1"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;&gt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#not_eq_2">
+<owl:NamedIndividual rdf:about="#python_not_eq_2">
   <rdf:type rdf:resource="#python_NOT_EQ_2"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">!=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#at">
+<owl:NamedIndividual rdf:about="#python_at">
   <rdf:type rdf:resource="#python_AT"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">@</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#arrow">
+<owl:NamedIndividual rdf:about="#python_arrow">
   <rdf:type rdf:resource="#python_ARROW"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-&gt;</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#add_assign">
+<owl:NamedIndividual rdf:about="#python_add_assign">
   <rdf:type rdf:resource="#python_ADD_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">+=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#sub_assign">
+<owl:NamedIndividual rdf:about="#python_sub_assign">
   <rdf:type rdf:resource="#python_SUB_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#mult_assign">
+<owl:NamedIndividual rdf:about="#python_mult_assign">
   <rdf:type rdf:resource="#python_MULT_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">*=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#at_assign">
+<owl:NamedIndividual rdf:about="#python_at_assign">
   <rdf:type rdf:resource="#python_AT_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">@=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#div_assign">
+<owl:NamedIndividual rdf:about="#python_div_assign">
   <rdf:type rdf:resource="#python_DIV_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">/=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#mod_assign">
+<owl:NamedIndividual rdf:about="#python_mod_assign">
   <rdf:type rdf:resource="#python_MOD_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">%=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#and_assign">
+<owl:NamedIndividual rdf:about="#python_and_assign">
   <rdf:type rdf:resource="#python_AND_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&amp;=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#or_assign">
+<owl:NamedIndividual rdf:about="#python_or_assign">
   <rdf:type rdf:resource="#python_OR_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">|=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#xor_assign">
+<owl:NamedIndividual rdf:about="#python_xor_assign">
   <rdf:type rdf:resource="#python_XOR_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">^=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#left_shift_assign">
+<owl:NamedIndividual rdf:about="#python_left_shift_assign">
   <rdf:type rdf:resource="#python_LEFT_SHIFT_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&lt;&lt;=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#right_shift_assign">
+<owl:NamedIndividual rdf:about="#python_right_shift_assign">
   <rdf:type rdf:resource="#python_RIGHT_SHIFT_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">&gt;&gt;=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#power_assign">
+<owl:NamedIndividual rdf:about="#python_power_assign">
   <rdf:type rdf:resource="#python_POWER_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">**=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#idiv_assign">
+<owl:NamedIndividual rdf:about="#python_idiv_assign">
   <rdf:type rdf:resource="#python_IDIV_ASSIGN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">//=</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#open_paren">
+<owl:NamedIndividual rdf:about="#python_open_paren">
   <rdf:type rdf:resource="#python_OPEN_PAREN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#close_paren">
+<owl:NamedIndividual rdf:about="#python_close_paren">
   <rdf:type rdf:resource="#python_CLOSE_PAREN"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">)</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#open_bracket">
+<owl:NamedIndividual rdf:about="#python_open_bracket">
   <rdf:type rdf:resource="#python_OPEN_BRACKET"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">[</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#close_bracket">
+<owl:NamedIndividual rdf:about="#python_close_bracket">
   <rdf:type rdf:resource="#python_CLOSE_BRACKET"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">]</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#open_brace">
+<owl:NamedIndividual rdf:about="#python_open_brace">
   <rdf:type rdf:resource="#python_OPEN_BRACE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{</string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#close_brace">
+<owl:NamedIndividual rdf:about="#python_close_brace">
   <rdf:type rdf:resource="#python_CLOSE_BRACE"/>
   <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">}</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_indent">
+  <rdf:type rdf:resource="#python_INDENT"/>
+  <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">	</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_dedent">
+  <rdf:type rdf:resource="#python_DEDENT"/>
+  <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_line_break">
+  <rdf:type rdf:resource="#python_LINE_BREAK"/>
+  <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
+</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_indv1">
+  <rdf:type rdf:resource="#python_classdef_cls1"/>
+  <owl:sameAs rdf:resource="#python_class"/>
+  <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</string_value>
 </owl:NamedIndividual>
 
 

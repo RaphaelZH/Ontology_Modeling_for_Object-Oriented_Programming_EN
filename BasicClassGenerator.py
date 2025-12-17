@@ -21,4 +21,17 @@ def ontology_generator():
         class variable(Thing):
             pass
 
+        class string_value(DataProperty, FunctionalProperty):
+            domain = [language_grammar, variable]
+            range = [str]
+
+        class syntax_chain(ObjectProperty, TransitiveProperty):
+            domain = [language_grammar]
+            range = [language_grammar]
+
+        class variable_name(variable):
+            pass
+
+        variable_name("name", string_value="\{name\}")
+
     return onto

@@ -91,6 +91,9 @@ def python_dictionary_generator():
         CLOSE_BRACKET="]",
         OPEN_BRACE="{",
         CLOSE_BRACE="}",
+        INDENT="\\t",
+        DEDENT="\\n",
+        LINE_BREAK="\\n",
     )
 
     return keywords_dict, operators_dict, other_symbols_dict
