@@ -72,9 +72,12 @@ with onto:
     class python_arguments(python_parser):
         pass
 
-    class python_arglist(python_parser):
+    class python_arglist_cls(python_parser):
         pass
-
+    
+    ### test
+    python_arglist_cls("python_arglist_ind")
+    
     class python_stmt(python_parser):
         pass
 
@@ -84,10 +87,13 @@ with onto:
     class python_compound_stmt(python_stmt):
         pass
 
-    class python_suite(python_parser):
+    class python_suite_cls(python_parser):
         pass
+    
+    ### test
+    python_suite_cls("python_suite_ind")
 
-    class python_suite_syn1(python_suite):
+    class python_suite_syn1(python_suite_cls):
         equivalent_to = [python_simple_stmt]
 
     """
@@ -110,28 +116,27 @@ with onto:
         equivalent_to = [onto.variable_name]
 
     class python_classdef_cls3(python_classdef_cls):
-        equivalent_to = [python_arglist]
+        equivalent_to = [python_arglist_cls]
 
     class python_classdef_cls4(python_classdef_cls):
         equivalent_to = [onto.python_COLON]
 
     class python_classdef_cls5(python_classdef_cls):
-        equivalent_to = [python_suite]
-
-    class python_funcdef(python_parser):
-        pass
+        equivalent_to = [python_suite_cls]
 
     python_classdef_ind = python_classdef_cls("python_classdef_ind")
 
     for i in range(1, len(list(python_classdef_cls.subclasses())) + 1):
         exec(
             f"python_classdef_ind{i} = python_classdef_cls{i}('python_classdef_ind{i}', \
-                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances())"
+                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances(), \
+                    syntactic_order = {i})"
         )
-        if i == 1:
-            exec(f"python_classdef_ind.syntactic_chain = [python_classdef_ind{i}]")
-        else:
-            exec(f"python_classdef_ind{i-1}.syntactic_chain = [python_classdef_ind{i}]")
+        exec(f"python_classdef_ind.syntax_container.append(python_classdef_ind{i})")
+
+
+    class python_funcdef(python_parser):
+        pass
 
 
 for indv in onto.individuals():
@@ -143,3 +148,19 @@ for indv in onto.individuals():
 
 
 onto.save(file="1. Ontology Files/Programming Language Parser.owl")
+
+del onto
+onto = get_ontology("1. Ontology Files/Programming Language Parser.owl").load()
+
+for individual in onto.individuals():
+    individual_info = []
+    if individual.name == "python_classdef_ind":
+        for ind in individual.syntax_container:
+            print(ind.syntactic_order, ind.string_value)
+        #sorted_people = sorted(people, key=lambda person: person.age)
+
+
+
+
+
+
