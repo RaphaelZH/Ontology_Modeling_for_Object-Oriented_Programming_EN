@@ -87,7 +87,7 @@ with onto:
     class python_suite(python_parser):
         pass
 
-    class python_suite_synt1(python_suite):
+    class python_suite_syn1(python_suite):
         equivalent_to = [python_simple_stmt]
 
     """
@@ -100,31 +100,38 @@ with onto:
         ]
     """
 
-    class python_classdef(python_parser):
-        onto.syntax_chain = [onto.python_CLASS]
+    class python_classdef_cls(python_parser):
+        pass
 
-    class python_classdef_cls1(python_classdef):
-        onto.equivalent_to = [onto.python_CLASS]
+    class python_classdef_cls1(python_classdef_cls):
+        equivalent_to = [onto.python_CLASS]
 
-    python_classdef_indv1 = python_classdef_cls1(
-        "python_classdef_indv1",
-        equivalent_to=[onto.python_class],
-    )
-
-    class python_classdef_element2(python_classdef):
+    class python_classdef_cls2(python_classdef_cls):
         equivalent_to = [onto.variable_name]
 
-    class python_classdef_element3(python_classdef):
+    class python_classdef_cls3(python_classdef_cls):
         equivalent_to = [python_arglist]
 
-    class python_classdef_element4(python_classdef):
+    class python_classdef_cls4(python_classdef_cls):
         equivalent_to = [onto.python_COLON]
 
-    class python_classdef_element5(python_classdef):
-        pass
+    class python_classdef_cls5(python_classdef_cls):
+        equivalent_to = [python_suite]
 
     class python_funcdef(python_parser):
         pass
+
+    python_classdef_ind = python_classdef_cls("python_classdef_ind")
+
+    for i in range(1, len(list(python_classdef_cls.subclasses())) + 1):
+        exec(
+            f"python_classdef_ind{i} = python_classdef_cls{i}('python_classdef_ind{i}', \
+                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances())"
+        )
+        if i == 1:
+            exec(f"python_classdef_ind.syntactic_chain = [python_classdef_ind{i}]")
+        else:
+            exec(f"python_classdef_ind{i-1}.syntactic_chain = [python_classdef_ind{i}]")
 
 
 for indv in onto.individuals():

@@ -8,10 +8,10 @@
 
 <owl:Ontology rdf:about="http://www.haozhang.me/Programming_Language_Parser.owl"/>
 
-<owl:ObjectProperty rdf:about="#syntax_chain">
+<owl:ObjectProperty rdf:about="#syntactic_chain">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-  <rdfs:domain rdf:resource="#language_grammar"/>
-  <rdfs:range rdf:resource="#language_grammar"/>
+  <rdfs:domain rdf:resource="#language_parser"/>
+  <rdfs:range rdf:resource="#language_parser"/>
 </owl:ObjectProperty>
 
 <owl:ObjectProperty rdf:about="#specific_language">
@@ -458,43 +458,45 @@
   <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_suite_synt1">
+<owl:Class rdf:about="#python_suite_syn1">
   <rdfs:subClassOf rdf:resource="#python_suite"/>
   <owl:equivalentClass rdf:resource="#python_simple_stmt"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_classdef">
+<owl:Class rdf:about="#python_classdef_cls">
   <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_classdef_cls1">
-  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+  <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
+  <owl:equivalentClass rdf:resource="#python_CLASS"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_classdef_element2">
-  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+<owl:Class rdf:about="#python_classdef_cls2">
+  <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
   <owl:equivalentClass rdf:resource="#variable_name"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_classdef_element3">
-  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+<owl:Class rdf:about="#python_classdef_cls3">
+  <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
   <owl:equivalentClass rdf:resource="#python_arglist"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_classdef_element4">
-  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+<owl:Class rdf:about="#python_classdef_cls4">
+  <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
   <owl:equivalentClass rdf:resource="#python_COLON"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_classdef_element5">
-  <rdfs:subClassOf rdf:resource="#python_classdef"/>
+<owl:Class rdf:about="#python_classdef_cls5">
+  <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
+  <owl:equivalentClass rdf:resource="#python_suite"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_funcdef">
   <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
-<owl:NamedIndividual rdf:about="#name">
+<owl:NamedIndividual rdf:about="#var_name">
   <rdf:type rdf:resource="#variable_name"/>
   <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\{name\}</string_value>
 </owl:NamedIndividual>
@@ -1029,11 +1031,41 @@
 </string_value>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#python_classdef_indv1">
+<owl:NamedIndividual rdf:about="#python_classdef_ind">
+  <rdf:type rdf:resource="#python_classdef_cls"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_ind1">
   <rdf:type rdf:resource="#python_classdef_cls1"/>
   <owl:sameAs rdf:resource="#python_class"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind2"/>
   <specific_language rdf:resource="#python"/>
   <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_ind2">
+  <rdf:type rdf:resource="#python_classdef_cls2"/>
+  <owl:sameAs rdf:resource="#var_name"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind3"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">\{name\}</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_ind3">
+  <rdf:type rdf:resource="#python_classdef_cls3"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind4"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_ind4">
+  <rdf:type rdf:resource="#python_classdef_cls4"/>
+  <owl:sameAs rdf:resource="#python_colon"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind5"/>
+  <specific_language rdf:resource="#python"/>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:</string_value>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#python_classdef_ind5">
+  <rdf:type rdf:resource="#python_classdef_cls5"/>
 </owl:NamedIndividual>
 
 

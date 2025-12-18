@@ -25,13 +25,13 @@ def ontology_generator():
             domain = [language_grammar, variable]
             range = [str]
 
-        class syntax_chain(ObjectProperty, TransitiveProperty):
-            domain = [language_grammar]
-            range = [language_grammar]
+        class syntactic_chain(ObjectProperty, TransitiveProperty):
+            domain = [language_parser]
+            range = [language_parser]
 
         class variable_name(variable):
             pass
 
-        variable_name("name", string_value="\{name\}")
+        variable_name("var_name", string_value="\{name\}")
 
     return onto
