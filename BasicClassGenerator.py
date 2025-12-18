@@ -36,6 +36,6 @@ def ontology_generator():
         class variable_name(variable):
             pass
 
-        variable_name("var_name", string_value="\{name\}")
+        variable_name("var_name", string_value="{name}")
 
     return onto

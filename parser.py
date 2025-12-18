@@ -74,10 +74,10 @@ with onto:
 
     class python_arglist_cls(python_parser):
         pass
-    
+
     ### test
     python_arglist_cls("python_arglist_ind")
-    
+
     class python_stmt(python_parser):
         pass
 
@@ -89,7 +89,7 @@ with onto:
 
     class python_suite_cls(python_parser):
         pass
-    
+
     ### test
     python_suite_cls("python_suite_ind")
 
@@ -134,18 +134,19 @@ with onto:
         )
         exec(f"python_classdef_ind.syntax_container.append(python_classdef_ind{i})")
 
-
     class python_funcdef(python_parser):
         pass
 
 
-for indv in onto.individuals():
-    if indv.equivalent_to != []:
-        for prop in indv.equivalent_to[0].get_properties():
+for ind in onto.individuals():
+    if ind.equivalent_to != []:
+        for prop in ind.equivalent_to[0].get_properties():
             exec(
-                f"onto.{indv.name}.{prop.name} = onto.{indv.equivalent_to[0].name}.{prop.name}"
+                f"onto.{ind.name}.{prop.name} = onto.{ind.equivalent_to[0].name}.{prop.name}"
             )
-
+        if ind.string_value is None:
+            variable_text = "{" + ind.equivalent_to[0].name + "}"
+            exec(f"onto.{ind.name}.string_value = '{variable_text}'")
 
 onto.save(file="1. Ontology Files/Programming Language Parser.owl")
 
@@ -157,10 +158,4 @@ for individual in onto.individuals():
     if individual.name == "python_classdef_ind":
         for ind in individual.syntax_container:
             print(ind.syntactic_order, ind.string_value)
-        #sorted_people = sorted(people, key=lambda person: person.age)
-
-
-
-
-
-
+        # sorted_people = sorted(people, key=lambda person: person.age)
