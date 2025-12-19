@@ -25,13 +25,6 @@
   <rdfs:range rdf:resource="#programming_language"/>
 </owl:ObjectProperty>
 
-<owl:ObjectProperty rdf:about="#has_element">
-  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-  <rdfs:domain rdf:resource="#language_parser"/>
-  <rdfs:range rdf:resource="#variable"/>
-  <rdfs:range rdf:resource="#language_grammar"/>
-</owl:ObjectProperty>
-
 <owl:DatatypeProperty rdf:about="#string_value">
   <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
   <rdfs:domain rdf:resource="#variable"/>
@@ -459,13 +452,31 @@
   <rdfs:subClassOf rdf:resource="#python_stmt"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_suite_cls">
+<owl:Class rdf:about="#python_suite">
   <rdfs:subClassOf rdf:resource="#python_parser"/>
 </owl:Class>
 
-<owl:Class rdf:about="#python_suite_syn1">
-  <rdfs:subClassOf rdf:resource="#python_suite_cls"/>
-  <owl:equivalentClass rdf:resource="#python_simple_stmt"/>
+<owl:Class rdf:about="#python_suite1_cls">
+  <rdfs:subClassOf rdf:resource="#python_suite"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite2_cls">
+  <rdfs:subClassOf rdf:resource="#python_suite"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite2_cls1">
+  <rdfs:subClassOf rdf:resource="#python_suite2_cls"/>
+  <owl:equivalentClass rdf:resource="#python_LINE_BREAK"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite2_cls2">
+  <rdfs:subClassOf rdf:resource="#python_suite2_cls"/>
+  <owl:equivalentClass rdf:resource="#python_INDENT"/>
+</owl:Class>
+
+<owl:Class rdf:about="#python_suite2_cls3">
+  <rdfs:subClassOf rdf:resource="#python_suite2_cls"/>
+  <owl:equivalentClass rdf:resource="#python_DEDENT"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_classdef_cls">
@@ -494,7 +505,7 @@
 
 <owl:Class rdf:about="#python_classdef_cls5">
   <rdfs:subClassOf rdf:resource="#python_classdef_cls"/>
-  <owl:equivalentClass rdf:resource="#python_suite_cls"/>
+  <owl:equivalentClass rdf:resource="#python_suite2_cls"/>
 </owl:Class>
 
 <owl:Class rdf:about="#python_funcdef">
@@ -503,7 +514,7 @@
 
 <owl:NamedIndividual rdf:about="#var_name">
   <rdf:type rdf:resource="#variable_name"/>
-  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{name\}</string_value>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{name}</string_value>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#python_def">
@@ -1041,8 +1052,8 @@
   <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
-<owl:NamedIndividual rdf:about="#python_suite_ind">
-  <rdf:type rdf:resource="#python_suite_cls"/>
+<owl:NamedIndividual rdf:about="#python_suite2_ind">
+  <rdf:type rdf:resource="#python_suite2_cls"/>
   <specific_language rdf:resource="#python"/>
 </owl:NamedIndividual>
 
@@ -1050,16 +1061,17 @@
   <rdf:type rdf:resource="#python_classdef_cls"/>
   <specific_language rdf:resource="#python"/>
   <syntax_container rdf:resource="#python_classdef_ind1"/>
-  <syntactic_chain rdf:resource="#python_classdef_ind1"/>
   <syntax_container rdf:resource="#python_classdef_ind2"/>
   <syntax_container rdf:resource="#python_classdef_ind3"/>
   <syntax_container rdf:resource="#python_classdef_ind4"/>
   <syntax_container rdf:resource="#python_classdef_ind5"/>
+  <syntactic_chain rdf:resource="#python_classdef_ind1"/>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#python_classdef_ind1">
   <rdf:type rdf:resource="#python_classdef_cls1"/>
   <owl:sameAs rdf:resource="#python_class"/>
+  <owl:sameAs rdf:resource="#python_classdef_ind1"/>
   <syntactic_chain rdf:resource="#python_classdef_ind2"/>
   <specific_language rdf:resource="#python"/>
   <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">class</string_value>
@@ -1068,13 +1080,15 @@
 <owl:NamedIndividual rdf:about="#python_classdef_ind2">
   <rdf:type rdf:resource="#python_classdef_cls2"/>
   <owl:sameAs rdf:resource="#var_name"/>
+  <owl:sameAs rdf:resource="#python_classdef_ind2"/>
   <syntactic_chain rdf:resource="#python_classdef_ind3"/>
-  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{name\}</string_value>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{name}</string_value>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#python_classdef_ind3">
   <rdf:type rdf:resource="#python_classdef_cls3"/>
   <owl:sameAs rdf:resource="#python_arglist_ind"/>
+  <owl:sameAs rdf:resource="#python_classdef_ind3"/>
   <syntactic_chain rdf:resource="#python_classdef_ind4"/>
   <specific_language rdf:resource="#python"/>
   <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{python_arglist_ind}</string_value>
@@ -1084,15 +1098,20 @@
   <rdf:type rdf:resource="#python_classdef_cls4"/>
   <owl:sameAs rdf:resource="#python_colon"/>
   <syntactic_chain rdf:resource="#python_classdef_ind5"/>
+  <owl:sameAs rdf:resource="#python_classdef_ind4"/>
   <specific_language rdf:resource="#python"/>
   <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">:</string_value>
 </owl:NamedIndividual>
 
 <owl:NamedIndividual rdf:about="#python_classdef_ind5">
   <rdf:type rdf:resource="#python_classdef_cls5"/>
-  <owl:sameAs rdf:resource="#python_suite_ind"/>
+  <owl:sameAs rdf:resource="#python_line_break"/>
+  <owl:sameAs rdf:resource="#python_dedent"/>
+  <owl:sameAs rdf:resource="#python_indent"/>
+  <owl:sameAs rdf:resource="#python_suite2_ind"/>
+  <owl:sameAs rdf:resource="#python_classdef_ind5"/>
   <specific_language rdf:resource="#python"/>
-  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">{python_suite_ind}</string_value>
+  <string_value rdf:datatype="http://www.w3.org/2001/XMLSchema#string">	</string_value>
 </owl:NamedIndividual>
 
 

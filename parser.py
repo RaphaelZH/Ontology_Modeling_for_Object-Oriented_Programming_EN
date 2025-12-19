@@ -9,15 +9,34 @@ keywords_dict, operators_dict, other_symbols_dict = python_dictionary_generator(
 
 onto = ontology_generator()
 
+
+def prop_syntactic_chain(cls):
+    global onto
+    with onto:
+        for i in range(1, len(list(cls.subclasses())) + 1):
+            exec(
+                f"{onto}.{cls.name[:-4]}_ind{i} = {onto}.{cls.name}{i}('{cls.name[:-4]}_ind{i}', \
+                    equivalent_to = {onto}.{cls.name}{i}.equivalent_to[0].instances())"
+            )
+            exec(
+                f"{onto}.{cls.name[:-4]}_ind.syntax_container.append({onto}.{cls.name[:-4]}_ind{i})"
+            )
+        if i == 1:
+            exec(
+                f"{onto}.{cls.name[:-4]}_ind.syntactic_chain = [{onto}.{cls.name[:-4]}_ind{i}]"
+            )
+        else:
+            j = i - 1
+            exec(
+                f"{onto}.{cls.name[:-4]}_ind{j}.syntactic_chain = [{onto}.{cls.name[:-4]}_ind{i}]"
+            )
+
+
 with onto:
 
     class specific_language(ObjectProperty, FunctionalProperty):
         domain = [onto.language_grammar]
         range = [onto.programming_language]
-
-    class has_element(ObjectProperty, FunctionalProperty):
-        domain = [onto.language_parser]
-        range = [onto.language_grammar, onto.variable]
 
     class python(onto.programming_language):
         pass
@@ -88,27 +107,47 @@ with onto:
     class python_compound_stmt(python_stmt):
         pass
 
-    class python_suite_cls(python_parser):
+    class python_suite(python_parser):
         pass
 
+    class python_suite1_cls(python_suite):
+        pass
+
+    class python_suite2_cls(python_suite):
+        pass
+
+    python_suite2_ind = python_suite2_cls(
+        "python_suite2_ind", specific_language=onto.python
+    )
+
+    class python_suite2_cls1(python_suite2_cls):
+        equivalent_to = [onto.python_LINE_BREAK]
+
+    class python_suite2_cls2(python_suite2_cls):
+        equivalent_to = [onto.python_INDENT]
+
+    class python_suite2_cls3(python_suite2_cls):
+        equivalent_to = [onto.python_DEDENT]
+
+    """
+    suite
+    : simple_stmt
+    | LINE_BREAK INDENT stmt+ DEDENT
+        
+    """
+
     ### test
-    python_suite_cls("python_suite_ind", specific_language=onto.python)
+    # python_suite_cls("python_suite_ind", specific_language=onto.python)
 
-    class python_suite_syn1(python_suite_cls):
-        equivalent_to = [python_simple_stmt]
-
-    """
-    class python_suite_syntax2(python_suite):
-        equivalent_to = [
-            onto.python_LINE_BREAK,
-            onto.python_INDENT,
-            python_stmt,
-            onto.python_DEDENT,
-        ]
-    """
+    # class python_suite_syn1(python_suite):
+    #    equivalent_to = [python_simple_stmt]
 
     class python_classdef_cls(python_parser):
         pass
+
+    python_classdef_ind = python_classdef_cls(
+        "python_classdef_ind", specific_language=onto.python
+    )
 
     class python_classdef_cls1(python_classdef_cls):
         equivalent_to = [onto.python_CLASS]
@@ -123,11 +162,9 @@ with onto:
         equivalent_to = [onto.python_COLON]
 
     class python_classdef_cls5(python_classdef_cls):
-        equivalent_to = [python_suite_cls]
+        equivalent_to = [python_suite2_cls]
 
-    python_classdef_ind = python_classdef_cls(
-        "python_classdef_ind", specific_language=onto.python
-    )
+    prop_syntactic_chain(python_classdef_cls)
 
     for i in range(1, len(list(python_classdef_cls.subclasses())) + 1):
         exec(
@@ -166,20 +203,22 @@ prolog.assertz("ancestor(A, D) :- parent(A, P), ancestor(P, D)")
 
 onto = get_ontology("1. Ontology Files/Programming Language Parser.owl").load()
 
+
+stmt_list = ["python_classdef_ind"]  # , "python_suite2_ind"]
+# It may be necessary to develop it as a function or class in the future. --------------------------
 with onto:
     for individual in onto.individuals():
-        if individual.name == "python_classdef_ind":
+        if individual.name in stmt_list:
             prolog.assertz(
                 f"parent({individual.name}, {individual.syntactic_chain[0].name})"
             )
             for ind in individual.syntax_container:
                 if len(ind.syntactic_chain) > 0:
                     prolog.assertz(f"parent({ind.name}, {ind.syntactic_chain[0].name})")
-
+                # print(ind.string_value)
     descendant_list = []
     for q in prolog.query("ancestor(python_classdef_ind, X)"):
         exec(f"descendant_list.append(onto.{q['X']}.string_value)")
 
-    print(descendant_list)
-
-    
+    print(" ".join(descendant_list))
+# --------------------------------------------------------------------------------------------------
