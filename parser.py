@@ -15,21 +15,24 @@ def prop_syntactic_chain(cls):
     with onto:
         for i in range(1, len(list(cls.subclasses())) + 1):
             exec(
-                f"{onto}.{cls.name[:-4]}_ind{i} = {onto}.{cls.name}{i}('{cls.name[:-4]}_ind{i}', \
+                f"{onto}.{cls.name}{i}('{cls.name[:-4]}_ind{i}', \
                     equivalent_to = {onto}.{cls.name}{i}.equivalent_to[0].instances())"
             )
             exec(
-                f"{onto}.{cls.name[:-4]}_ind.syntax_container.append({onto}.{cls.name[:-4]}_ind{i})"
+                f"{onto}.{cls.name[:-4]}_ind.syntax_container.append\
+                    ({onto}.{cls.name[:-4]}_ind{i})"
             )
-        if i == 1:
-            exec(
-                f"{onto}.{cls.name[:-4]}_ind.syntactic_chain = [{onto}.{cls.name[:-4]}_ind{i}]"
-            )
-        else:
-            j = i - 1
-            exec(
-                f"{onto}.{cls.name[:-4]}_ind{j}.syntactic_chain = [{onto}.{cls.name[:-4]}_ind{i}]"
-            )
+            if i == 1:
+                exec(
+                    f"{onto}.{cls.name[:-4]}_ind.syntactic_chain = \
+                        [{onto}.{cls.name[:-4]}_ind{i}]"
+                )
+            else:
+                j = i - 1
+                exec(
+                    f"{onto}.{cls.name[:-4]}_ind{j}.syntactic_chain = \
+                        [{onto}.{cls.name[:-4]}_ind{i}]"
+                )
 
 
 with onto:
@@ -129,12 +132,7 @@ with onto:
     class python_suite2_cls3(python_suite2_cls):
         equivalent_to = [onto.python_DEDENT]
 
-    """
-    suite
-    : simple_stmt
-    | LINE_BREAK INDENT stmt+ DEDENT
-        
-    """
+    prop_syntactic_chain(python_suite2_cls)
 
     ### test
     # python_suite_cls("python_suite_ind", specific_language=onto.python)
@@ -166,19 +164,6 @@ with onto:
 
     prop_syntactic_chain(python_classdef_cls)
 
-    for i in range(1, len(list(python_classdef_cls.subclasses())) + 1):
-        exec(
-            f"python_classdef_ind{i} = python_classdef_cls{i}('python_classdef_ind{i}', \
-                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances())"
-        )
-
-        exec(f"python_classdef_ind.syntax_container.append(python_classdef_ind{i})")
-
-        if i == 1:
-            exec(f"python_classdef_ind.syntactic_chain = [python_classdef_ind{i}]")
-        else:
-            exec(f"python_classdef_ind{i-1}.syntactic_chain = [python_classdef_ind{i}]")
-
     class python_funcdef(python_parser):
         pass
 
@@ -204,7 +189,7 @@ prolog.assertz("ancestor(A, D) :- parent(A, P), ancestor(P, D)")
 onto = get_ontology("1. Ontology Files/Programming Language Parser.owl").load()
 
 
-stmt_list = ["python_classdef_ind"]  # , "python_suite2_ind"]
+stmt_list = ["python_classdef_ind", "python_suite2_ind"]
 # It may be necessary to develop it as a function or class in the future. --------------------------
 with onto:
     for individual in onto.individuals():
