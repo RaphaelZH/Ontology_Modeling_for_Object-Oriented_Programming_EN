@@ -1,5 +1,5 @@
-import textwrap
 from owlready2 import *
+from pyswip import Prolog
 import types
 
 from DictionaryGenerator import python_dictionary_generator
@@ -8,6 +8,7 @@ from BasicClassGenerator import ontology_generator
 keywords_dict, operators_dict, other_symbols_dict = python_dictionary_generator()
 
 onto = ontology_generator()
+
 with onto:
 
     class specific_language(ObjectProperty, FunctionalProperty):
@@ -76,7 +77,7 @@ with onto:
         pass
 
     ### test
-    python_arglist_cls("python_arglist_ind")
+    python_arglist_cls("python_arglist_ind", specific_language=onto.python)
 
     class python_stmt(python_parser):
         pass
@@ -91,7 +92,7 @@ with onto:
         pass
 
     ### test
-    python_suite_cls("python_suite_ind")
+    python_suite_cls("python_suite_ind", specific_language=onto.python)
 
     class python_suite_syn1(python_suite_cls):
         equivalent_to = [python_simple_stmt]
@@ -124,15 +125,22 @@ with onto:
     class python_classdef_cls5(python_classdef_cls):
         equivalent_to = [python_suite_cls]
 
-    python_classdef_ind = python_classdef_cls("python_classdef_ind")
+    python_classdef_ind = python_classdef_cls(
+        "python_classdef_ind", specific_language=onto.python
+    )
 
     for i in range(1, len(list(python_classdef_cls.subclasses())) + 1):
         exec(
             f"python_classdef_ind{i} = python_classdef_cls{i}('python_classdef_ind{i}', \
-                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances(), \
-                    syntactic_order = {i})"
+                equivalent_to = python_classdef_cls{i}.equivalent_to[0].instances())"
         )
+
         exec(f"python_classdef_ind.syntax_container.append(python_classdef_ind{i})")
+
+        if i == 1:
+            exec(f"python_classdef_ind.syntactic_chain = [python_classdef_ind{i}]")
+        else:
+            exec(f"python_classdef_ind{i-1}.syntactic_chain = [python_classdef_ind{i}]")
 
     class python_funcdef(python_parser):
         pass
@@ -151,11 +159,27 @@ for ind in onto.individuals():
 onto.save(file="1. Ontology Files/Programming Language Parser.owl")
 
 del onto
+
+prolog = Prolog()
+prolog.assertz("ancestor(A, D) :- parent(A, D)")
+prolog.assertz("ancestor(A, D) :- parent(A, P), ancestor(P, D)")
+
 onto = get_ontology("1. Ontology Files/Programming Language Parser.owl").load()
 
-for individual in onto.individuals():
-    individual_info = []
-    if individual.name == "python_classdef_ind":
-        for ind in individual.syntax_container:
-            print(ind.syntactic_order, ind.string_value)
-        # sorted_people = sorted(people, key=lambda person: person.age)
+with onto:
+    for individual in onto.individuals():
+        if individual.name == "python_classdef_ind":
+            prolog.assertz(
+                f"parent({individual.name}, {individual.syntactic_chain[0].name})"
+            )
+            for ind in individual.syntax_container:
+                if len(ind.syntactic_chain) > 0:
+                    prolog.assertz(f"parent({ind.name}, {ind.syntactic_chain[0].name})")
+
+    descendant_list = []
+    for q in prolog.query("ancestor(python_classdef_ind, X)"):
+        exec(f"descendant_list.append(onto.{q['X']}.string_value)")
+
+    print(descendant_list)
+
+    
